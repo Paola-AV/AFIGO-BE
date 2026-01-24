@@ -1,0 +1,16 @@
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\bin\Debug\net9.0\AfigoBackend.Application.deps.json
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\bin\Debug\net9.0\AfigoBackend.Application.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\bin\Debug\net9.0\AfigoBackend.Application.pdb
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\bin\Debug\net9.0\AfigoBackend.Domain.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\bin\Debug\net9.0\AfigoBackend.Domain.pdb
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.csproj.AssemblyReference.cache
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.AssemblyInfoInputs.cache
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.AssemblyInfo.cs
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.csproj.CoreCompileInputs.cache
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.sourcelink.json
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBac.F7524891.Up2Date
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\refint\AfigoBackend.Application.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\AfigoBackend.Application.pdb
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Aplication\obj\Debug\net9.0\ref\AfigoBackend.Application.dll

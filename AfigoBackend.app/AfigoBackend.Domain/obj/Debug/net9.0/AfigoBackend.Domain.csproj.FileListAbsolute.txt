@@ -1,0 +1,12 @@
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.AssemblyInfoInputs.cache
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.AssemblyInfo.cs
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.sourcelink.json
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\bin\Debug\net9.0\AfigoBackend.Domain.deps.json
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\bin\Debug\net9.0\AfigoBackend.Domain.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\bin\Debug\net9.0\AfigoBackend.Domain.pdb
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\refint\AfigoBackend.Domain.dll
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\AfigoBackend.Domain.pdb
+C:\Users\Paola\Documents\GIT\AFIGO-BE\AfigoBackend.app\AfigoBackend.Domain\obj\Debug\net9.0\ref\AfigoBackend.Domain.dll

@@ -1,0 +1,26 @@
+﻿
+using AfigoBackend.Aplication.Abstractions.Interfaces;
+using AfigoBackend.Domain.DetallePedido;
+using AfigoBackend.Infraestructure.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace AfigoBackend.Infraestructure
+{
+    public static class DependencyInjection
+    {
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            );
+
+            services.AddScoped<IUsuarioInterface, UsuarioService>();
+            services.AddScoped<IPedidoInterface, PedidoService>();
+            services.AddScoped<IDetallePedidoInterface, DetallePedidoService>();
+
+            return services;
+        }
+    }
+}
