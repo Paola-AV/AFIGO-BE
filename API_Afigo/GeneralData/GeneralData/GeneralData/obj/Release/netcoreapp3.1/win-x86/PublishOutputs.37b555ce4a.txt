@@ -1,0 +1,4 @@
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\appsettings.Development.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\appsettings.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\GeneralData.pdb
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\GeneralData.exe

@@ -1,0 +1,9 @@
+diff a/API/GeneralData/GeneralData/.vs/GeneralData/config/applicationhost.config b/API/GeneralData/GeneralData/.vs/GeneralData/config/applicationhost.config	(rejected hunks)
+@@ -157,7 +157,6 @@
+       </site>
+       <site name="GeneralData" id="2">
+         <application path="/" applicationPool="GeneralData AppPool">
+-          <virtualDirectory path="/" physicalPath="C:\Users\freddy.soto\OneDrive - ED &amp; F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData" />
+           <virtualDirectory path="/" physicalPath="D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData" />
+         </application>
+         <bindings>

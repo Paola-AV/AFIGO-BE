@@ -1,0 +1,316 @@
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.xml
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\scopedcss\bundle\GeneralData.styles.css
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.xml
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\scopedcss\bundle\GeneralData.styles.css
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\freddy.soto\OneDrive - ED & F Man Holding Limited\Desktop\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.xml
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\scopedcss\bundle\GeneralData.styles.css
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+D:\volcafeapps2022\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OOXML.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXml4Net.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\VolcafeApps2022\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.StaticWebAssets.xml
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OOXML.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\Desktop\2022\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.StaticWebAssets.xml
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OOXML.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Pack.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.GeneralData.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.build.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.StaticWebAssets.xml
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OOXML.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Pack.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.GeneralData.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.build.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CopyComplete
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\WebSiteJ-M\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.StaticWebAssets.xml
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.exe
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.deps.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.runtimeconfig.dev.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Web.Http.Cors.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OOXML.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\NPOI.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.AssemblyReference.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfoInputs.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.AssemblyInfo.cs
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.csproj.CoreCompileInputs.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.sourcelink.json
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.RazorTargetAssemblyInfo.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Manifest.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\GeneralData.StaticWebAssets.Pack.cache
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.GeneralData.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.build.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.GeneralData.props
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralD.F25D0954.Up2Date
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.dll
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.pdb
+C:\Users\minor\OneDrive\Escritorio\BEAfigoContro\API_Afigo\GeneralData\GeneralData\GeneralData\obj\Release\netcoreapp3.1\GeneralData.genruntimeconfig.cache
