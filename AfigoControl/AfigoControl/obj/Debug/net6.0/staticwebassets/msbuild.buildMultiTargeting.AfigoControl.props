@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\AfigoControl.props" />
-</Project>
