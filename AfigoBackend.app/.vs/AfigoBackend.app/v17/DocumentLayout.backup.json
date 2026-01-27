@@ -3,44 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{271D638A-761C-4485-BEA2-F9F9FA019414}|AfigoBackend.Domain\\AfigoBackend.Domain.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.domain\\detallepedido\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{271D638A-761C-4485-BEA2-F9F9FA019414}|AfigoBackend.Domain\\AfigoBackend.Domain.csproj|solutionrelative:afigobackend.domain\\detallepedido\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|solutionrelative:afigobackend.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|solutionrelative:afigobackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.api\\controllers\\detallepedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|solutionrelative:afigobackend.api\\controllers\\detallepedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{271D638A-761C-4485-BEA2-F9F9FA019414}|AfigoBackend.Domain\\AfigoBackend.Domain.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.domain\\pedido\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{271D638A-761C-4485-BEA2-F9F9FA019414}|AfigoBackend.Domain\\AfigoBackend.Domain.csproj|solutionrelative:afigobackend.domain\\pedido\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\services\\detallepedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\services\\detallepedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|solutionrelative:afigobackend.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC1A9F68-DC66-4186-B204-C4B7129C5780}|AfigoBackend.Api\\AfigoBackend.Api.csproj|solutionrelative:afigobackend.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{37618326-F203-4401-B8E6-ED6B0DFEF7B0}|AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.aplication\\abstractions\\interfaces\\ipedidointerface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37618326-F203-4401-B8E6-ED6B0DFEF7B0}|AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj|solutionrelative:afigobackend.aplication\\abstractions\\interfaces\\ipedidointerface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37618326-F203-4401-B8E6-ED6B0DFEF7B0}|AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.aplication\\abstractions\\interfaces\\iusuariointerface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37618326-F203-4401-B8E6-ED6B0DFEF7B0}|AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj|solutionrelative:afigobackend.aplication\\abstractions\\interfaces\\iusuariointerface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\util\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\util\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|c:\\users\\paola\\documents\\git\\afigo-be\\afigobackend.app\\afigobackend.infraestructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{900B399E-E267-41F8-A4B3-BD0C599F6FBA}|AfigoBackend.Infraestructure\\AfigoBackend.Infraestructure.csproj|solutionrelative:afigobackend.infraestructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,124 +98,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:48:19.422Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\DependencyInjection.cs",
-              "RelativeToolTip": "AfigoBackend.Infraestructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:48:10.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\AppDbContext.cs",
-              "RelativeToolTip": "AfigoBackend.Infraestructure\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:48:04.509Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DetallePedido.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Domain\\DetallePedido\\DetallePedido.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Domain\\DetallePedido\\DetallePedido.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Domain\\DetallePedido\\DetallePedido.cs",
-              "RelativeToolTip": "AfigoBackend.Domain\\DetallePedido\\DetallePedido.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAUwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:47:25.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Api\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "AfigoBackend.Api\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwB4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:39:37.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "AfigoBackend.Api\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "AfigoBackend.Api\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wBwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T20:00:55.264Z"
+              "WhenOpened": "2026-01-25T21:18:45.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Program.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Program.cs",
+              "RelativeToolTip": "AfigoBackend.Api\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAowCoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T21:01:41.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DetallePedidoService.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\DetallePedidoService.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\Services\\DetallePedidoService.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\DetallePedidoService.cs",
+              "RelativeToolTip": "AfigoBackend.Infraestructure\\Services\\DetallePedidoService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T23:35:02.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetallePedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\DetallePedidoController.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Api\\Controllers\\DetallePedidoController.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\DetallePedidoController.cs",
+              "RelativeToolTip": "AfigoBackend.Api\\Controllers\\DetallePedidoController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T23:33:50.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Api\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Api\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "AfigoBackend.Api\\Controllers\\PedidoController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T23:31:33.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "IPedidoInterface.cs",
               "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\Abstractions\\Interfaces\\IPedidoInterface.cs",
               "RelativeDocumentMoniker": "AfigoBackend.Aplication\\Abstractions\\Interfaces\\IPedidoInterface.cs",
               "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\Abstractions\\Interfaces\\IPedidoInterface.cs",
               "RelativeToolTip": "AfigoBackend.Aplication\\Abstractions\\Interfaces\\IPedidoInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:16:47.527Z"
+              "WhenOpened": "2026-01-24T23:31:27.795Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "PedidoService.cs",
               "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\PedidoService.cs",
               "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\Services\\PedidoService.cs",
               "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\PedidoService.cs",
               "RelativeToolTip": "AfigoBackend.Infraestructure\\Services\\PedidoService.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowEYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:16:20.486Z"
+              "WhenOpened": "2026-01-24T23:25:28.052Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Domain\\Pedido\\Pedido.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Domain\\Pedido\\Pedido.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Domain\\Pedido\\Pedido.cs",
-              "RelativeToolTip": "AfigoBackend.Domain\\Pedido\\Pedido.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAA6wDIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Util\\Constants.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\Util\\Constants.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Util\\Constants.cs",
+              "RelativeToolTip": "AfigoBackend.Infraestructure\\Util\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:18:33.063Z"
+              "WhenOpened": "2026-01-24T23:22:18.122Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IUsuarioInterface.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\Abstractions\\Interfaces\\IUsuarioInterface.cs",
-              "RelativeDocumentMoniker": "AfigoBackend.Aplication\\Abstractions\\Interfaces\\IUsuarioInterface.cs",
-              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\Abstractions\\Interfaces\\IUsuarioInterface.cs",
-              "RelativeToolTip": "AfigoBackend.Aplication\\Abstractions\\Interfaces\\IUsuarioInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "AfigoBackend.Infraestructure\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T22:27:43.997Z"
+              "WhenOpened": "2026-01-24T23:14:11.83Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,5 +1,79 @@
 [
   {
+    "ContainingType": "AfigoBackend.Api.Controllers.DetallePedidoController",
+    "Method": "GetAll",
+    "RelativePath": "api/DetallePedido",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.DetallePedidoController",
+    "Method": "Create",
+    "RelativePath": "api/DetallePedido",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "AfigoBackend.Domain.DetallePedido.DetallePedido",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.DetallePedidoController",
+    "Method": "Update",
+    "RelativePath": "api/DetallePedido",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "AfigoBackend.Domain.DetallePedido.DetallePedido",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.DetallePedidoController",
+    "Method": "GetById",
+    "RelativePath": "api/DetallePedido/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.DetallePedidoController",
+    "Method": "Delete",
+    "RelativePath": "api/DetallePedido/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AfigoBackend.Api.Controllers.PedidoController",
     "Method": "GetAll",
     "RelativePath": "api/Pedido",
@@ -71,6 +145,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.PedidoController",
+    "Method": "GetByTipoCotizacion",
+    "RelativePath": "api/Pedido/cotizacion",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AfigoBackend.Api.Controllers.PedidoController",
+    "Method": "GetByTipoPedido",
+    "RelativePath": "api/Pedido/pedido",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

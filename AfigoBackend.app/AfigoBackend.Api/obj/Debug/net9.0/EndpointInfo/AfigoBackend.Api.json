@@ -5,6 +5,120 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/DetallePedido": {
+      "get": {
+        "tags": [
+          "DetallePedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DetallePedido"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DetallePedido"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetallePedido"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DetallePedido/{id}": {
+      "get": {
+        "tags": [
+          "DetallePedido"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DetallePedido"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pedido": {
       "get": {
         "tags": [
@@ -142,6 +256,30 @@
         }
       }
     },
+    "/api/Pedido/pedido": {
+      "get": {
+        "tags": [
+          "Pedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pedido/cotizacion": {
+      "get": {
+        "tags": [
+          "Pedido"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuarios": {
       "get": {
         "tags": [
@@ -259,6 +397,38 @@
   },
   "components": {
     "schemas": {
+      "DetallePedido": {
+        "required": [
+          "nombreProducto"
+        ],
+        "type": "object",
+        "properties": {
+          "idDetalle": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pedidoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreProducto": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cantProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "pedido": {
+            "$ref": "#/components/schemas/Pedido"
+          }
+        },
+        "additionalProperties": false
+      },
       "Pedido": {
         "type": "object",
         "properties": {
@@ -347,6 +517,9 @@
     }
   },
   "tags": [
+    {
+      "name": "DetallePedido"
+    },
     {
       "name": "Pedido"
     },
