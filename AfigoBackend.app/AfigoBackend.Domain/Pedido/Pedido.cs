@@ -17,7 +17,7 @@ namespace AfigoBackend.Domain.Pedido
         public int IdPedido { get; set; }
 
         [Column("fecha_pedido")]
-        public DateTime FechaPedido { get; set; }
+        public DateOnly FechaPedido { get; set; }
 
         [Column("estado")]
         public string Estado { get; set; } = string.Empty;
@@ -40,7 +40,7 @@ namespace AfigoBackend.Domain.Pedido
         [Column("direccion_envio")]
         public string DireccionEnvio { get; set; } = string.Empty;
 
-        [Column("urgencia_encio")]
+        [Column("urgencia_envio")]
         public string UrgenciaEnvio { get; set; } = string.Empty;
 
         [Column("tipo_pedido")]

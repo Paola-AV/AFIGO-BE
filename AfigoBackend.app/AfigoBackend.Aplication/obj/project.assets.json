@@ -560,9 +560,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj",
-      "projectName": "AfigoBackend.Aplication",
-      "projectPath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj",
+      "projectUniqueName": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Application.csproj",
+      "projectName": "AfigoBackend.Application",
+      "projectPath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Application.csproj",
       "packagesPath": "C:\\Users\\Paola\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\obj\\",
       "projectStyle": "PackageReference",

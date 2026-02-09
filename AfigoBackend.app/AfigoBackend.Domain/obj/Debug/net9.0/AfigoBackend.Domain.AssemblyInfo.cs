@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AfigoBackend.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e7ffd0575cf9b9cd1e0c3837e4066e5565714f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa3f10de4b49b2ce696ebbcf778f07ead0cb87f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("AfigoBackend.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AfigoBackend.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

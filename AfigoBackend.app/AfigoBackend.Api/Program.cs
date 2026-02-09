@@ -1,11 +1,30 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using AfigoBackend.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Infraestructura (DbContext + servicios)
-builder.Services.AddInfrastructure(builder.Configuration);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+   
+    var serverVersion = ServerVersion.AutoDetect(connectionString);
+
+    options.UseMySql(connectionString, serverVersion, mySqlOptions =>
+    {
+        mySqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorNumbersToAdd: null);
+    });
+
+    // Opcional: tiempos y logging
+    options.EnableSensitiveDataLogging(false);
+    options.EnableDetailedErrors(true);
+});
+
+builder.Services.AddInfrastructure(builder.Configuration);
 // Controllers
 builder.Services.AddControllers();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ylGWuuMiICw=",
+  "dgSpecHash": "Pl/AX+SIlLY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Aplication.csproj",
+  "projectFilePath": "C:\\Users\\Paola\\Documents\\GIT\\AFIGO-BE\\AfigoBackend.app\\AfigoBackend.Aplication\\AfigoBackend.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paola\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0\\microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "C:\\Users\\Paola\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0\\microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
