@@ -6,19 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Inventorio\" />
-    <Folder Include="Factura\" />
-    <Folder Include="DetalleAbono\" />
-    <Folder Include="Cuenta\" />
-    <Folder Include="Cliente\" />
-    <Folder Include="PeticionVacaciones\" />
-    <Folder Include="Gasto\" />
-    <Folder Include="Proveedor\" />
-    <Folder Include="Trabajador\" />
-    <Folder Include="Producto\" />
-    <Folder Include="VentaDetalle\" />
-    <Folder Include="Venta\" />
-  </ItemGroup>
-
 </Project>
