@@ -39,7 +39,7 @@ namespace AfigoBackend.Infraestructure.Services
             if (entity is null) return false;
 
             entity.Nombre = usuario.Nombre;
-            entity.Direccion = usuario.Direccion;
+            entity.Correo = usuario.Correo;
             entity.UsuarioAdmin = usuario.UsuarioAdmin;
             entity.NombreDeUsuario = usuario.NombreDeUsuario;
             entity.Contrasenia = usuario.Contrasenia;

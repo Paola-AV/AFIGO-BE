@@ -15,8 +15,8 @@ namespace AfigoBackend.Domain.PeticionVacaciones
         [Column("id_peticion")]
         public int IdPeticion { get; set; }
 
-        [Column("id_usuario")]
-        public int IdUsuario { get; set; }
+        [Column("id_trabajador")]
+        public int IdTrabajador { get; set; }
 
         [Column("fecha_inicio")]
         public DateOnly FechaInicio { get; set; }

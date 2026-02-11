@@ -19,13 +19,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
             errorNumbersToAdd: null);
     });
 
-    // Opcional: tiempos y logging
+    
     options.EnableSensitiveDataLogging(false);
     options.EnableDetailedErrors(true);
 });
 
 builder.Services.AddInfrastructure(builder.Configuration);
-// Controllers
+
 builder.Services.AddControllers();
 
 

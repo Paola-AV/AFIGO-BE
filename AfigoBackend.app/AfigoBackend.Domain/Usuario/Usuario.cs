@@ -21,7 +21,7 @@ namespace AfigoBackend.Domain.Usuario
         public string Nombre { get; set; } = string.Empty;
 
         [Column("direccion")]
-        public string? Direccion { get; set; }
+        public string? Correo { get; set; }
 
         [Column("usuario_admin")]
         public int UsuarioAdmin { get; set; }

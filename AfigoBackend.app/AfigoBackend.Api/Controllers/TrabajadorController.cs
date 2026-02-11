@@ -1,19 +1,18 @@
 ﻿using AfigoBackend.Aplication.Abstractions.Interfaces;
-using AfigoBackend.Domain.DetallePedido;
+using AfigoBackend.Domain.Trabajador;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AfigoBackend.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DetallePedidoController : ControllerBase
+    public class TrabajadorController : ControllerBase
     {
-        private readonly IDetallePedidoInterface _service;
-        public DetallePedidoController(IDetallePedidoInterface service)
+        private readonly ITrabajadorInterface _service;
+        public TrabajadorController(ITrabajadorInterface service)
         {
             _service = service;
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
@@ -25,15 +24,22 @@ namespace AfigoBackend.Api.Controllers
             return item is null ? NotFound() : Ok(item);
         }
 
+        [HttpGet("user/{id:int}")]
+        public async Task<IActionResult> GetByUserId(int id)
+        {
+            var item = await _service.GetByUsuarioIdAsync(id);
+            return item is null ? NotFound() : Ok(item);
+        }
+
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] DetallePedido model)
+        public async Task<IActionResult> Create([FromBody] Trabajador model)
         {
             var created = await _service.CreateAsync(model);
-            return CreatedAtAction(nameof(GetById), new { id = created.IdDetalle }, created);
+            return CreatedAtAction(nameof(GetById), new { id = created.IdTrabajador }, created);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] DetallePedido model)
+        public async Task<IActionResult> Update([FromBody] Trabajador model)
         {
             var ok = await _service.UpdateAsync(model);
             return ok ? NoContent() : NotFound();

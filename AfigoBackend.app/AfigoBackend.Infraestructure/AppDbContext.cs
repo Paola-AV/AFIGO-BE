@@ -18,6 +18,8 @@ namespace AfigoBackend.Infraestructure
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<DetallePedido> DetallePedidos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Domain.Trabajador.Trabajador> Trabajadores { get; set; }
+        public DbSet<Domain.PeticionVacaciones.PeticionVacaciones> PeticionesVacaciones { get; set; }
 
     }
 }

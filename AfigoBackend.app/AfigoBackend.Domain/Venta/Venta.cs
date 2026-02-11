@@ -34,8 +34,8 @@ namespace AfigoBackend.Domain.Venta
         public string Estado { get; set; } = string.Empty;
 
         [Column("monto_total")]
-        public decimal montoTotal { get; set; }
-
+        public decimal MontoTotal { get; set; }
+         
         [Column("referencia")]
         public string Referencia { get; set; } = string.Empty;
     }
