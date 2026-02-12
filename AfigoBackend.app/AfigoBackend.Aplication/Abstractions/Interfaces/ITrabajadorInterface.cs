@@ -12,6 +12,7 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
         Task<Trabajador> CreateAsync(Trabajador trabajador);
         Task<bool> DeleteAsync(int id);
         Task<List<Trabajador>> GetAllAsync();
+        Task<List<Trabajador>> GetAllWithVacationDays();
         Task<Trabajador?> GetByIdAsync(int id);
         Task<Trabajador?> GetByUsuarioIdAsync(int idUsuario);
         Task<bool> UpdateAsync(Trabajador trabajador);

@@ -17,6 +17,9 @@ namespace AfigoBackend.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
+        [HttpGet("vacationdays")]
+        public async Task<IActionResult> GetAllWithVacaciones() => Ok(await _service.GetAllWithVacationDays());
+
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {

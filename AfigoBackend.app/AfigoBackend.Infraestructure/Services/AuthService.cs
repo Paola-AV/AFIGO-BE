@@ -18,7 +18,7 @@ namespace AfigoBackend.Infraestructure.Services
         public AuthService(AppDbContext db, IPasswordHasher hasher)
             => (_db, _hasher) = (db, hasher);
 
-        public async Task<bool> LoginAsync(string correoOUsuario, string password, CancellationToken ct)
+        public async Task<Usuario?> LoginAsync(string correoOUsuario, string password, CancellationToken ct)
         {
             var user = await _db.Set<Usuario>()
                                 .AsNoTracking()
@@ -26,14 +26,16 @@ namespace AfigoBackend.Infraestructure.Services
                                       u.Correo == correoOUsuario
                                    || u.NombreDeUsuario == correoOUsuario, ct);
 
-            if (user is null) return false;
-
-            return _hasher.Verify(user.Contrasenia, password);
+            if (user is null) return null;
+            var ok = _hasher.Verify(user.Contrasenia, password);
+            return ok ? user : null;
         }
+
+       
 
         public async Task RegistrarAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin, CancellationToken ct)
         {
-            // Recomendado: evita duplicados
+
             var existe = await _db.Set<Usuario>()
                                   .AsNoTracking()
                                   .AnyAsync(u => u.Correo == correo, ct);

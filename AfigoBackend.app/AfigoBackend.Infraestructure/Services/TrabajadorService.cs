@@ -7,19 +7,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AfigoBackend.Infraestructure.Util;
+using AfigoBackend.Domain.PeticionVacaciones;
 
 namespace AfigoBackend.Infraestructure.Services
 {
     public class TrabajadorService: ITrabajadorInterface
     {
         private readonly AppDbContext _db;
-        public TrabajadorService(AppDbContext db) => _db = db;
+        private readonly IPeticionVacacionesInterface _peticionVacacionesService;
+
+        public TrabajadorService(AppDbContext db, IPeticionVacacionesInterface peticionVacacionesService)
+        {
+            _db = db;
+            _peticionVacacionesService = peticionVacacionesService;
+        }
+        
+
 
         public Task<List<Trabajador>> GetAllAsync()
             => _db.Trabajadores.AsNoTracking().ToListAsync();
 
-        public Task<Trabajador?> GetByIdAsync(int id)
-            => _db.Trabajadores.FindAsync(id).AsTask();
+        public async Task<List<Trabajador>> GetAllWithVacationDays()
+        {
+            List<Trabajador> trabajadores = await _db.Trabajadores.ToListAsync();
+            if (trabajadores.Count == 0)
+            {
+                return trabajadores;
+            }
+            else
+            {
+                foreach (Trabajador trab in trabajadores)
+                {
+
+                    var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trab.IdTrabajador);
+                    int disponibles = VacacionesUtil.CalcularDiasVacacionesDisponibles(trab, peticiones);
+
+                    trab.VacacionesDisponibles = disponibles;
+                }
+                return trabajadores;
+            }
+        }
+
+        public async Task<Trabajador?> GetByIdAsync(int id)
+        { 
+            Trabajador trabajador = await _db.Trabajadores.FindAsync(id).AsTask();
+            if(trabajador == null) { return null; }
+            var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trabajador.IdTrabajador);
+            int disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
+            trabajador.VacacionesDisponibles = disponible;
+            return trabajador;
+
+        }
+           
+        
 
         public Task<Trabajador?> GetByUsuarioIdAsync(int idUsuario)
             => _db.Trabajadores.FirstOrDefaultAsync(t => t.IdUsuario == idUsuario);

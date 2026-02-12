@@ -1,5 +1,7 @@
 ﻿using AfigoBackend.Aplication.Abstractions.Interfaces;
+using AfigoBackend.Domain.Usuario;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AfigoBackend.Api.Controllers;
 
@@ -44,14 +46,22 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto, CancellationToken ct)
     {
-        var userKey = dto.CorreoOUsuario?.Trim().ToLowerInvariant() ?? string.Empty;
-        var ok = await _service.LoginAsync(userKey, dto.Password, ct);
 
-        return ok
-            ? Ok(new { message = "Credenciales válidas" })   
-            : Unauthorized(new { error = "Usuario o contraseña inválidos" });
+        var user = await _service.LoginAsync(dto.CorreoOUsuario, dto.Password, ct);
+        if (user is null)
+            return Unauthorized(new { error = "Usuario o contraseña inválidos" });
+
+        var resp = new UserLoginDto(
+            UserId: user.UserId,
+            Nombre: user.Nombre ?? string.Empty,
+            UsuarioAdmin: user.UsuarioAdmin
+        );
+
+        return Ok(resp);
     }
+
 }
+
 
 
 public record RegisterDto(
@@ -63,3 +73,9 @@ public record RegisterDto(
 );
 
 public record LoginDto(string CorreoOUsuario, string Password);
+
+public record UserLoginDto(
+            int UserId,
+            string Nombre,
+            int UsuarioAdmin
+        );
