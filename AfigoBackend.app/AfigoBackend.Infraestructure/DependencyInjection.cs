@@ -18,6 +18,15 @@ namespace AfigoBackend.Infraestructure
             services.AddScoped<IDetallePedidoInterface, DetallePedidoService>();
             services.AddScoped<ITrabajadorInterface, TrabajadorService>();
             services.AddScoped<IPeticionVacacionesInterface, PeticionVacacionesService>();
+            services.AddScoped<ICuentaInterface, CuentaService>();
+            services.AddScoped <IInventarioInterface, InventarioService>();
+            services.AddScoped <IGastoInterface, GastoService>();
+            services.AddScoped <IFacturaInterface, FacturaService>();
+            services.AddScoped <IVentaInterface, VentaService>();
+            services.AddScoped <IProductoInterface, ProductoService>();
+            services.AddScoped <IVentaDetalleInterface, VentaDetalleService>();
+            services.AddScoped <IProveedorInterface, ProveedorService>();
+            services.AddScoped <IClienteInterface, ClienteService>();
             services.AddScoped<IAuthInterface, AuthService>();
             services.AddSingleton<IPasswordHasher, Pbkdf2PasswordHasher>();
             return services;

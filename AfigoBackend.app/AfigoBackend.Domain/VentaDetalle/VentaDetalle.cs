@@ -12,7 +12,7 @@ namespace AfigoBackend.Domain.VentaDetalle
     public class VentaDetalle
     {
         [Key]
-        [Column("id_venta_detalle")]
+        [Column("id_detalleVenta")]
         public int IdVentaDetalle { get; set; }
 
         [Column("id_venta")]

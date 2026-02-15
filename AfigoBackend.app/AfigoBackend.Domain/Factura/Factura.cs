@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AfigoBackend.Domain.Factura
 {
-    [Table("factura")]
+    [Table("Factura")]
     public class Factura
     {
         [Key]

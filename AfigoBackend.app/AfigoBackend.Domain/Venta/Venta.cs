@@ -27,13 +27,13 @@ namespace AfigoBackend.Domain.Venta
         [Column("id_cliente")]
         public int IdCliente { get; set; }
 
-        [Column("id_factura")]//cambiar en db
-        public int IdFactura { get; set; }
+        [Column("num_factura")]//cambiar en db
+        public string numFactura { get; set; } = string.Empty;
 
         [Column("estado")]
         public string Estado { get; set; } = string.Empty;
 
-        [Column("monto_total")]
+        [Column("montoTotal")]
         public decimal MontoTotal { get; set; }
          
         [Column("referencia")]
