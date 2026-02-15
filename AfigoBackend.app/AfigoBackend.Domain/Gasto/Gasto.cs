@@ -26,7 +26,7 @@ namespace AfigoBackend.Domain.Gasto
         public decimal Monto { get; set; }
 
         [Column("fecha")]
-        public DateTime Fecha { get; set; }
+        public DateOnly Fecha { get; set; }
 
         [Column("sucursal")]
         public string Sucursal { get; set; } = string.Empty;
