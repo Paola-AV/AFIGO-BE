@@ -15,5 +15,13 @@ namespace AfigoBackend.Api.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetAllByTrabajador(int id)
+        {
+            var ventas = await _service.GetByTrabajadorId(id);
+            if (ventas == null || ventas.Count == 0) return NotFound();
+            return Ok(ventas);
+        }
     }
 }

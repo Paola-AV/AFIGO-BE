@@ -7,8 +7,8 @@ namespace AfigoBackend.Api.Controllers
     [Route("api/[controller]")]
     public class CuentaController : ControllerBase
     {
-        private readonly IGastoInterface _service;
-        public CuentaController(IGastoInterface service)
+        private readonly ICuentaInterface _service;
+        public CuentaController(ICuentaInterface service)
         {
             _service = service;
         }

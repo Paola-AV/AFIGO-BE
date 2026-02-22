@@ -20,7 +20,7 @@ namespace AfigoBackend.Domain.Factura
         public string Numero { get; set; } = string.Empty;
 
         [Column("estado")]
-        public decimal Estado { get; set; }
+        public string Estado { get; set; } = string.Empty;
 
         [Column("sucursal")]
         public string Sucursal { get; set; } = string.Empty;

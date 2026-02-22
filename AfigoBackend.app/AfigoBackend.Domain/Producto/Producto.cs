@@ -15,9 +15,6 @@ namespace AfigoBackend.Domain.Producto
         [Column("id_producto")]
         public int IdProducto { get; set; }
 
-        [Column("codigo")]
-        public string Codigo { get; set; } = string.Empty;
-
         [Column("nombre")]
         public string Nombre { get; set; } = string.Empty;
 
@@ -35,5 +32,8 @@ namespace AfigoBackend.Domain.Producto
 
         [Column("marca")]
         public string Marca { get; set; } = string.Empty;
+
+        [Column("identificadorExt")]
+        public string? IdentificadorExt { get; set; }
     }
 }

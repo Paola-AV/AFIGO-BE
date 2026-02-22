@@ -22,9 +22,9 @@ namespace AfigoBackend.Domain.Inventario
         public int IdProducto { get; set; }
 
         [Column("cantidad")]
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
 
         [Column("fecha_ingreso")]
-        public DateTime FechaIngreso { get; set; }
+        public DateOnly FechaIngreso { get; set; }
     }
 }

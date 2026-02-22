@@ -28,6 +28,9 @@ namespace AfigoBackend.Domain.Cuenta
         [Column("saldo")]
         public decimal Saldo { get; set; }
 
+        [Column("estado")]
+        public string? Estado { get; set; }
+
 
         //[ForeignKey(nameof(IdProveedor))]
         //public Pedido.Pedido? Pedido { get; set; }

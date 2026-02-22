@@ -16,31 +16,30 @@ namespace AfigoBackend.Domain.Proveedor
         public int IdProveedor { get; set; }
 
         [Column("primer_nombre")]
-        public string PrimerNombre { get; set; } = string.Empty;
+        public string? PrimerNombre { get; set; }
 
         [Column("segundo_nombre")]
-        public string SegundoNombre { get; set; } = string.Empty;
+        public string? SegundoNombre { get; set; }
 
         [Column("primer_apellido")]
-        public string PrimerApellido { get; set; } = string.Empty;
-
+        public string? PrimerApellido { get; set; } 
         [Column("segundo_apellido")]
-        public string SegundoApellido { get; set; } = string.Empty;
+        public string? SegundoApellido { get; set; } 
 
         [Column("cedula_fisica")]
-        public string CedulaFisica { get; set; } = string.Empty;
+        public string? CedulaFisica { get; set; } 
 
         [Column("cedula_juridica")]
-        public string CedulaJuridica { get; set; } = string.Empty;
+        public string? CedulaJuridica { get; set; } 
 
         [Column("correo_electronico")]
-        public string CorreoElectronico { get; set; } = string.Empty;
+        public string? CorreoElectronico { get; set; }
         
         [Column("direccion")]
-        public string Direccion { get; set; } = string.Empty;
+        public string? Direccion { get; set; } 
 
         [Column("telefono")]
-        public string Telefono { get; set; } = string.Empty;
+        public string? Telefono { get; set; } 
 
     }
 }

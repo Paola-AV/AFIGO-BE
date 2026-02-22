@@ -22,9 +22,7 @@ public class AuthController : ControllerBase
     {
         
         var correo = dto.Correo?.Trim().ToLowerInvariant() ?? string.Empty;
-        var nombreUsuario = string.IsNullOrWhiteSpace(dto.NombreUsuario)
-            ? correo     
-            : dto.NombreUsuario.Trim();
+        var nombreUsuario = dto.NombreUsuario?.Trim().ToLowerInvariant() ?? string.Empty;
 
         if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(dto.Password))
             return BadRequest(new { error = "Correo y contraseña son obligatorios." });

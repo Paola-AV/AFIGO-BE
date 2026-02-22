@@ -23,6 +23,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.EnableDetailedErrors(true);
 });
 
+builder.Services.AddDbContext<ExternalDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ExternalSqlConnection")));
+
+
 // DI propia (services, hasher, etc.)
 builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -141,12 +145,15 @@ app.Use(async (ctx, next) =>
     {
         var origin = ctx.Request.Headers.Origin.ToString();
         var referer = ctx.Request.Headers.Referer.ToString();
-
+        var appOrigin = $"{ctx.Request.Scheme}://{ctx.Request.Host}";
         bool originOk = !string.IsNullOrEmpty(origin) && allowedOrigins.Contains(origin);
         bool refererOk = !string.IsNullOrEmpty(referer) && allowedOrigins.Any(a =>
             referer.StartsWith(a, StringComparison.OrdinalIgnoreCase));
+        bool sameOrigin = (!string.IsNullOrEmpty(origin) && origin.StartsWith(appOrigin, StringComparison.OrdinalIgnoreCase))
+                      || (!string.IsNullOrEmpty(referer) && referer.StartsWith(appOrigin, StringComparison.OrdinalIgnoreCase));
 
-        if (!originOk && !refererOk)
+
+        if (!originOk && !refererOk && !sameOrigin)
         {
             ctx.Response.StatusCode = StatusCodes.Status400BadRequest;
             await ctx.Response.WriteAsync("CSRF blocked: invalid origin");
@@ -154,7 +161,7 @@ app.Use(async (ctx, next) =>
         }
 
         // Exigir header AJAX para evitar submits ciegos
-        if (!ctx.Request.Headers.ContainsKey("X-Requested-With"))
+        if (!sameOrigin&&!ctx.Request.Headers.ContainsKey("X-Requested-With"))
         {
             ctx.Response.StatusCode = StatusCodes.Status400BadRequest;
             await ctx.Response.WriteAsync("CSRF blocked: missing X-Requested-With");

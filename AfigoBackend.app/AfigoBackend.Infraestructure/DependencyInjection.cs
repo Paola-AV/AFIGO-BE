@@ -28,6 +28,7 @@ namespace AfigoBackend.Infraestructure
             services.AddScoped <IProveedorInterface, ProveedorService>();
             services.AddScoped <IClienteInterface, ClienteService>();
             services.AddScoped<IAuthInterface, AuthService>();
+            services.AddScoped<IExternalSyncInterface, ExternalSyncService>();
             services.AddSingleton<IPasswordHasher, Pbkdf2PasswordHasher>();
             return services;
         }
