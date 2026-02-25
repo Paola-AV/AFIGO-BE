@@ -31,6 +31,9 @@ namespace AfigoBackend.Domain.Factura
         [Column("id_cliente")]
         public int IdCliente { get; set; }
 
+        [Column("identificadorExt")]
+        public int? IdentificadorExt { get; set; }
+
         [ForeignKey(nameof(IdCliente))]
         public Cliente.Cliente? Cliente { get; set; }
     }

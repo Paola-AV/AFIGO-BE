@@ -39,7 +39,10 @@ namespace AfigoBackend.Domain.Proveedor
         public string? Direccion { get; set; } 
 
         [Column("telefono")]
-        public string? Telefono { get; set; } 
+        public string? Telefono { get; set; }
+
+        [Column("identificadorExt")]
+        public int? IdentificadorExt { get; set; }
 
     }
 }

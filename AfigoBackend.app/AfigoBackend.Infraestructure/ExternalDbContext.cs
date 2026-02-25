@@ -15,6 +15,12 @@ namespace AfigoBackend.Infraestructure
         public DbSet<ExternalProductoView> Productos { get; set; } = null!;
         public DbSet<ExternalGastoView> Gastos { get; set; } = null!;
         public DbSet<ExternalInventarioView> Inventarios { get; set; } = null!;
+        public DbSet<ExternalProveedorView> Proveedores { get; set; } = null!;
+        public DbSet<ExternalFacturaView> Facturas { get; set; } = null!;
+        public DbSet<ExternalVentaView> Ventas { get; set; } = null!;
+        public DbSet<ExternalVentaDetalleView> VentaDetalles { get; set; } = null!;
+        public DbSet<ExternalCuentaView> Cuentas { get; set; } = null!;
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -50,6 +56,70 @@ namespace AfigoBackend.Infraestructure
                 eb.Property(i => i.IdProducto).HasColumnName("id_producto");
                 eb.Property(i => i.Cantidad).HasColumnName("cantidad");
                 eb.Property(i => i.FechaIngreso).HasColumnName("fecha_ingreso");
+            });
+
+            modelBuilder.Entity<ExternalProveedorView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("Proveedor");
+                eb.Property(p => p.IdProveedor).HasColumnName("id_proveedor");
+                eb.Property(p => p.PrimerNombre).HasColumnName("primer_nombre");
+                eb.Property(p => p.SegundoNombre).HasColumnName("segundo_nombre");
+                eb.Property(p => p.PrimerApellido).HasColumnName("primer_apeliido");
+                eb.Property(p => p.SegundoApellido).HasColumnName("segundo_apellido");
+                eb.Property(p => p.CedulaFisica).HasColumnName("cedula_fisica");
+                eb.Property(p => p.CedulaJuridica).HasColumnName("cedula_juridica");
+                eb.Property(p => p.CorreoElectronico).HasColumnName("corrreo_electronico");
+                eb.Property(p => p.Telefono).HasColumnName("telefono");
+                eb.Property(p => p.Direccion).HasColumnName("direccion");
+            });
+
+            modelBuilder.Entity<ExternalFacturaView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("Factura");
+                eb.Property(f => f.IdFactura).HasColumnName("id_factura");
+                eb.Property(f => f.Numero).HasColumnName("numero");
+                eb.Property(f => f.Estado).HasColumnName("estado");
+                eb.Property(f => f.Sucursal).HasColumnName("sucursal");
+                eb.Property(f => f.Fecha).HasColumnName("fecha");
+                eb.Property(f => f.IdProveedor).HasColumnName("id_proveedor");
+            });
+
+            modelBuilder.Entity<ExternalVentaView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("Venta");
+                eb.Property(v => v.IdVenta).HasColumnName("id_Venta");
+                eb.Property(v => v.Fecha).HasColumnName("fecha");
+                eb.Property(v => v.Descripcion).HasColumnName("descripcion");
+                eb.Property(v => v.IdTrabajador).HasColumnName("id_trabajador");
+                eb.Property(v => v.IdCliente).HasColumnName("id_cliente");
+                eb.Property(v => v.NumFactura).HasColumnName("num_factura");
+                eb.Property(v => v.Estado).HasColumnName("estado");
+                eb.Property(v => v.MontoTotal).HasColumnName("montoTotal");
+                eb.Property(v => v.Referencia).HasColumnName("referencia");
+            });
+
+            modelBuilder.Entity<ExternalVentaDetalleView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("VentaDetalle");
+                eb.Property(d => d.IdVenta).HasColumnName("id_venta");
+                eb.Property(d => d.IdProducto).HasColumnName("id_producto");
+                eb.Property(d => d.cantidad).HasColumnName("cantidad");
+            });
+
+            modelBuilder.Entity<ExternalCuentaView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("Cuenta");
+                eb.Property(c => c.Sucursal).HasColumnName("sucursal");
+                eb.Property(c => c.idProveedor).HasColumnName("id_proveedor");
+                eb.Property(c => c.monto).HasColumnName("monto");
+                eb.Property(c => c.idFactura).HasColumnName("id_factura");
+                eb.Property(c => c.estado).HasColumnName("estado");
+                eb.Property(c => c.saldo).HasColumnName("saldo");
             });
 
             base.OnModelCreating(modelBuilder);
