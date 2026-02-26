@@ -17,24 +17,22 @@ namespace AfigoBackend.Domain.Factura
         public int IdFactura { get; set; }
 
         [Column("numero")]
-        public string Numero { get; set; } = string.Empty;
+        public string? Numero { get; set; } = string.Empty;
 
         [Column("estado")]
-        public string Estado { get; set; } = string.Empty;
+        public string? Estado { get; set; } = string.Empty;
 
         [Column("sucursal")]
-        public string Sucursal { get; set; } = string.Empty;
+        public string? Sucursal { get; set; } = string.Empty;
 
         [Column("fecha")]
-        public DateOnly Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
-        [Column("id_cliente")]
-        public int IdCliente { get; set; }
+        [Column("id_proveedor")]
+        public int? IdProveedor { get; set; }
 
         [Column("identificadorExt")]
         public int? IdentificadorExt { get; set; }
 
-        [ForeignKey(nameof(IdCliente))]
-        public Cliente.Cliente? Cliente { get; set; }
     }
 }

@@ -47,13 +47,13 @@ namespace AfigoBackend.Infraestructure.ExternalViews
     public class ExternalInventarioView
     {
         [Column("sucursal")]
-        public string Sucursal { get; set; } = string.Empty;  // varchar(14)
+        public string? Sucursal { get; set; }   // varchar(14)
         [Column("id_producto")]
-        public string IdProducto { get; set; } = string.Empty; // varchar(20)
+        public string? IdProducto { get; set; } = string.Empty; // varchar(20)
         [Column("cantidad")]
         public double? Cantidad { get; set; }                  // float
         [Column("fecha_ingreso")]
-        public DateTime FechaIngreso { get; set; }            // datetime
+        public DateTime? FechaIngreso { get; set; }            // datetime
     }
 
     [Keyless]

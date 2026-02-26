@@ -16,12 +16,12 @@ namespace AfigoBackend.Domain.VentaDetalle
         public int IdVentaDetalle { get; set; }
 
         [Column("id_venta")]
-        public int IdVenta { get; set; }
+        public int? IdVenta { get; set; }
 
         [Column("id_producto")]
-        public int IdProducto { get; set; }
+        public int? IdProducto { get; set; }
 
         [Column("cantidad")]
-        public int Cantidad { get; set; }
+        public double? Cantidad { get; set; }
     }
 }

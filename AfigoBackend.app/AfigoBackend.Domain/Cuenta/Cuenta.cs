@@ -17,16 +17,16 @@ namespace AfigoBackend.Domain.Cuenta
         public int IdCuenta { get; set; }
 
         [Column("id_proveedor")]
-        public int IdProveedor { get; set; }
+        public int? IdProveedor { get; set; }
 
         [Column("monto")]
-        public decimal Monto { get; set; }
+        public double? Monto { get; set; }
 
         [Column("id_factura")]
-        public int IdFactura { get; set; }
+        public int? IdFactura { get; set; }
 
         [Column("saldo")]
-        public decimal Saldo { get; set; }
+        public double? Saldo { get; set; }
 
         [Column("estado")]
         public string? Estado { get; set; }

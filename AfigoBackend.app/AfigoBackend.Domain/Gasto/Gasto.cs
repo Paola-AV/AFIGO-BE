@@ -17,18 +17,18 @@ namespace AfigoBackend.Domain.Gasto
         public int IdGasto { get; set; }
 
         [Column("tipo")]
-        public string Tipo { get; set; } = string.Empty;
+        public string? Tipo { get; set; } = string.Empty;
 
         [Column("descripcion")]
-        public string Descripcion { get; set; } = string.Empty;
+        public string? Descripcion { get; set; } = string.Empty;
 
         [Column("monto")]
-        public decimal Monto { get; set; }
+        public double? Monto { get; set; }
 
         [Column("fecha")]
-        public DateOnly Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
         [Column("sucursal")]
-        public string Sucursal { get; set; } = string.Empty;
+        public string? Sucursal { get; set; } = string.Empty;
     }
 }

@@ -16,22 +16,22 @@ namespace AfigoBackend.Domain.Producto
         public int IdProducto { get; set; }
 
         [Column("nombre")]
-        public string Nombre { get; set; } = string.Empty;
+        public string? Nombre { get; set; } = string.Empty;
 
         [Column("descripcion")]
-        public string Descripcion { get; set; } = string.Empty;
+        public string? Descripcion { get; set; } = string.Empty;
 
         [Column("precio_costo")]
-        public decimal PrecioCosto { get; set; }
+        public double? PrecioCosto { get; set; }
 
         [Column("precio_venta")]
-        public decimal PrecioVenta { get; set; }
+        public double? PrecioVenta { get; set; }
 
         [Column("familia")]
-        public string Familia { get; set; } = string.Empty;
+        public string? Familia { get; set; } = string.Empty;
 
         [Column("marca")]
-        public string Marca { get; set; } = string.Empty;
+        public string? Marca { get; set; } = string.Empty;
 
         [Column("identificadorExt")]
         public string? IdentificadorExt { get; set; }

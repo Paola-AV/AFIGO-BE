@@ -16,28 +16,28 @@ namespace AfigoBackend.Domain.Venta
         public int IdVenta { get; set; }
 
         [Column("fecha")]
-        public DateOnly Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
-        [Column("sucursal")]
-        public string Sucursal { get; set; } = string.Empty;
+        [Column("descripcion")]
+        public string? Descripcion { get; set; } = string.Empty;
 
         [Column("id_trabajador")]
-        public int IdTrabajador { get; set; }
+        public int? IdTrabajador { get; set; }
 
         [Column("id_cliente")]
-        public int IdCliente { get; set; }
+        public int? IdCliente { get; set; }
 
         [Column("num_factura")]//cambiar en db
-        public string numFactura { get; set; } = string.Empty;
+        public string? numFactura { get; set; } = string.Empty;
 
         [Column("estado")]
-        public string Estado { get; set; } = string.Empty;
+        public string? Estado { get; set; } = string.Empty;
 
         [Column("montoTotal")]
-        public decimal MontoTotal { get; set; }
+        public double? MontoTotal { get; set; }
          
         [Column("referencia")]
-        public string Referencia { get; set; } = string.Empty;
+        public string? Referencia { get; set; } = string.Empty;
 
         [Column("identificadorExt")]
         public int? IdentificadorExt { get; set; }

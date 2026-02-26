@@ -135,15 +135,13 @@ namespace AfigoBackend.Infraestructure.Services
             {
                 ct.ThrowIfCancellationRequested();
 
-                var extId = p.IdProveedor?.ToString() ?? string.Empty;
-
-                var existing = await _app.Proveedores.FirstOrDefaultAsync(x => x.IdentificadorExt == extId, ct);
+                var existing = await _app.Proveedores.FirstOrDefaultAsync(x => x.IdentificadorExt == p.IdProveedor, ct);
 
                 if (existing == null)
                 {
                     var nuevo = new Proveedor
                     {
-                        IdentificadorExt = extId,
+                        IdentificadorExt = p.IdProveedor,
                         PrimerNombre = p.PrimerNombre ?? string.Empty,
                         SegundoNombre = p.SegundoNombre ?? string.Empty,
                         PrimerApellido = p.PrimerApellido ?? string.Empty,

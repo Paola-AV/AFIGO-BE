@@ -16,15 +16,15 @@ namespace AfigoBackend.Domain.Inventario
         public int IdInventario { get; set; }
 
         [Column("sucursal")]
-        public string Sucursal { get; set; } = string.Empty;
+        public string? Sucursal { get; set; } = string.Empty;
 
         [Column("id_producto")]
-        public int IdProducto { get; set; }
+        public int? IdProducto { get; set; }
 
         [Column("cantidad")]
-        public decimal Cantidad { get; set; }
+        public double? Cantidad { get; set; }
 
         [Column("fecha_ingreso")]
-        public DateOnly FechaIngreso { get; set; }
+        public DateTime? FechaIngreso { get; set; }
     }
 }
