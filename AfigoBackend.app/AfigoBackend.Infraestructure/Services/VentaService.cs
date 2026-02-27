@@ -30,7 +30,7 @@ namespace AfigoBackend.Infraestructure.Services
                 {
                     IdVenta = v.IdVenta,
                     Fecha = v.Fecha,
-                    Sucursal = v.Sucursal,
+                    Descripcion = v.Descripcion,
                     IdTrabajador = v.IdTrabajador,
                     IdCliente = v.IdCliente,
                     numFactura = v.numFactura,

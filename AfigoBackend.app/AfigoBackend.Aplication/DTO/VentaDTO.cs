@@ -13,18 +13,18 @@ namespace AfigoBackend.Aplication.DTO
     {
         public int IdVenta { get; set; }
 
-        public DateOnly Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
-        public string Sucursal { get; set; } = string.Empty;
+        public string? Descripcion { get; set; } 
 
-        public int IdTrabajador { get; set; }
-        public int IdCliente { get; set; }
-        public string numFactura { get; set; } = string.Empty;
+        public int? IdTrabajador { get; set; }
+        public int? IdCliente { get; set; }
+        public string? numFactura { get; set; } 
 
-        public string Estado { get; set; } = string.Empty;
-        public decimal MontoTotal { get; set; }
+        public string? Estado { get; set; }
+        public double? MontoTotal { get; set; }
 
-        public string Referencia { get; set; } = string.Empty;
+        public string? Referencia { get; set; } 
 
         public List<VentaDetalle> VentaDetalles { get; set; } = new();
     }

@@ -30,9 +30,5 @@ namespace AfigoBackend.Domain.DetallePedido
         [Column("descripcion")]
         public string? Descripcion { get; set; }
 
-
-        [ForeignKey(nameof(PedidoId))]
-        public Pedido.Pedido? Pedido { get; set; }
-
     }
 }

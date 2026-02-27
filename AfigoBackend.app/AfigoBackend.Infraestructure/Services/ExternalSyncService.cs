@@ -8,11 +8,6 @@ using AfigoBackend.Domain.Proveedor;
 using AfigoBackend.Domain.Venta;
 using AfigoBackend.Domain.VentaDetalle;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AfigoBackend.Infraestructure.Services
 {
@@ -42,8 +37,8 @@ namespace AfigoBackend.Infraestructure.Services
                     {
                         Nombre = p.Nombre ?? string.Empty,
                         Descripcion = p.Descripcion ?? string.Empty,
-                        PrecioCosto = Convert.ToDecimal(p.PrecioCosto ?? 0.0),
-                        PrecioVenta = Convert.ToDecimal(p.PrecioVenta ?? 0.0),
+                        PrecioCosto = p.PrecioCosto,
+                        PrecioVenta = p.PrecioVenta,
                         Familia = p.Familia ?? string.Empty,
                         Marca = p.Marca ?? string.Empty,
                         IdentificadorExt = p.IdProducto ?? string.Empty
@@ -55,25 +50,26 @@ namespace AfigoBackend.Infraestructure.Services
                     // Actualiza campos si cambian
                     existing.Nombre = p.Nombre ?? existing.Nombre;
                     existing.Descripcion = p.Descripcion ?? existing.Descripcion;
-                    existing.PrecioCosto = Convert.ToDecimal(p.PrecioCosto ?? (double)existing.PrecioCosto);
-                    existing.PrecioVenta = Convert.ToDecimal(p.PrecioVenta ?? (double)existing.PrecioVenta);
+                    existing.PrecioCosto = p.PrecioCosto;
+                    existing.PrecioVenta = p.PrecioVenta;
                     existing.Familia = p.Familia ?? existing.Familia;
                     existing.Marca = p.Marca ?? existing.Marca;
                 }
             }
 
-            await _app.SaveChangesAsync(ct);
+            if (_app.ChangeTracker.HasChanges())
+                await _app.SaveChangesAsync(ct);
         }
 
         public async Task SyncGastosAsync(CancellationToken ct = default)
         {
-            var external = await _ext.Gastos.AsNoTracking().ToListAsync(ct);
+            var cutoff = new DateTime(2025, 1, 1);
+            var external = await _ext.Gastos.AsNoTracking().Where(g => g.Fecha >= cutoff).ToListAsync(ct);
 
             foreach (var g in external)
             {
-                var fechaGasto = DateOnly.FromDateTime(g.Fecha);
-
-                var existing = await _app.Gastos.FirstOrDefaultAsync(x => x.Tipo == g.Tipo && x.Fecha == fechaGasto, ct);
+                ct.ThrowIfCancellationRequested();
+                var existing = await _app.Gastos.FirstOrDefaultAsync(x => x.Tipo == g.Tipo && x.Fecha == g.Fecha && x.Monto==g.Monto, ct);
                 
                 if ( existing==null)
                 {
@@ -81,21 +77,22 @@ namespace AfigoBackend.Infraestructure.Services
                     {
                         Tipo = g.Tipo,
                         Descripcion = g.Descripcion,
-                        Monto = Convert.ToDecimal(g.Monto),
-                        Fecha = fechaGasto,
+                        Monto = g.Monto,
+                        Fecha = g.Fecha,
                         Sucursal = g.Sucursal
                     };
                     _app.Gastos.Add(gasto);
                 }
             }
 
-            await _app.SaveChangesAsync(ct);
+            if (_app.ChangeTracker.HasChanges())
+                await _app.SaveChangesAsync(ct);
         }
 
         public async Task SyncInventarioAsync(CancellationToken ct = default)
         {
-            
-            var external = await _ext.Inventarios.AsNoTracking().ToListAsync(ct);
+            var cutoff = new DateTime(2025, 1, 1);
+            var external = await _ext.Inventarios.AsNoTracking().Where(i => i.FechaIngreso >= cutoff).ToListAsync(ct);
 
             foreach (var i in external)
             {
@@ -107,16 +104,14 @@ namespace AfigoBackend.Infraestructure.Services
                     continue;
                 }
 
-                var fechaIngreso = DateOnly.FromDateTime(i.FechaIngreso);
-
-                var existing = await _app.Inventarios.FirstOrDefaultAsync(x => product.IdentificadorExt == i.IdProducto && x.FechaIngreso == fechaIngreso, ct);
+                var existing = await _app.Inventarios.FirstOrDefaultAsync(x => product.IdentificadorExt == i.IdProducto && x.FechaIngreso == i.FechaIngreso && x.Sucursal==i.Sucursal && x.Cantidad==i.Cantidad, ct);
                 if(existing == null) {
                     var inv = new Inventario
                     {
                         Sucursal = i.Sucursal,
                         IdProducto = product.IdProducto,
-                        Cantidad = (decimal)i.Cantidad,
-                        FechaIngreso = fechaIngreso
+                        Cantidad = i.Cantidad,
+                        FechaIngreso = i.FechaIngreso
                     };
 
                     _app.Inventarios.Add(inv);
@@ -124,7 +119,8 @@ namespace AfigoBackend.Infraestructure.Services
                 
             }
 
-            await _app.SaveChangesAsync(ct);
+            if (_app.ChangeTracker.HasChanges())
+                await _app.SaveChangesAsync(ct);
         }
 
         public async Task SyncProveedoresAsync(CancellationToken ct = default)
@@ -173,11 +169,29 @@ namespace AfigoBackend.Infraestructure.Services
 
         public async Task SyncFacturasAsync(CancellationToken ct = default)
         {
-            var external = await _ext.Facturas.AsNoTracking().ToListAsync(ct);
+            var cutoff = new DateTime(2025, 1, 1);
+            var external = await _ext.Facturas.AsNoTracking().Where(i => i.Fecha >= cutoff).ToListAsync(ct);
 
             foreach (var f in external)
             {
                 ct.ThrowIfCancellationRequested();
+                // Normalizar id_proveedor: quitar espacios, eliminar cualquier no dígito,
+                // quitar ceros a la izquierda y convertir a int. Si no es convertible, saltar.
+                var raw = f.IdProveedor ?? string.Empty;
+                raw = raw.Trim();
+                var digitsOnly = System.Text.RegularExpressions.Regex.Replace(raw, @"\D", "");
+                var cleaned = digitsOnly.TrimStart('0');
+                if (string.IsNullOrEmpty(cleaned))
+                    cleaned = "0";
+
+                if (!int.TryParse(cleaned, out var proveedorExtId))
+                    continue;
+
+
+                var proveedor = await _app.Proveedores.FirstOrDefaultAsync(p => p.IdentificadorExt == proveedorExtId, ct);
+                if (proveedor == null)
+                    continue;
+
 
                 var extId = f.IdFactura;
 
@@ -188,20 +202,16 @@ namespace AfigoBackend.Infraestructure.Services
                     var factura = new Factura
                     {
                         IdentificadorExt = extId,
-                        // Si la BD interna tiene cliente vinculado y existe correspondencia,
-                        // puedes intentar buscar cliente por IdentificadorExt aquí.
-                        // Asigno IdCliente por defecto 0 si no se puede resolver.
-                        IdCliente = 0
+                        Numero = f.Numero,
+                        Estado = f.Estado,
+                        Sucursal = f.Sucursal,
+                        Fecha = f.Fecha,
+                        IdProveedor = proveedor.IdProveedor
                     };
 
-                    // Si tienes número/estado/fecha en la entidad interna, asigna aquí según definición.
                     _app.Facturas.Add(factura);
                 }
-                else
-                {
-                    // Actualiza campos visibles si existen en la entidad interna
-                    // existing.Numero = f.Numero ?? existing.Numero; // ejemplo si existe la propiedad
-                }
+                
             }
 
             await _app.SaveChangesAsync(ct);
@@ -224,13 +234,13 @@ namespace AfigoBackend.Infraestructure.Services
                     var venta = new Venta
                     {
                         IdentificadorExt = extId,
-                        Fecha = v.Fecha.HasValue ? DateOnly.FromDateTime(v.Fecha.Value) : default,
-                       // Descripcion = v.Descripcion ?? string.Empty,
+                        Fecha = v.Fecha.HasValue ? v.Fecha.Value : default,
+                        Descripcion = v.Descripcion ?? string.Empty,
                         IdTrabajador = v.IdTrabajador ?? 0,
                         IdCliente = v.IdCliente ?? 0,
                         numFactura = v.NumFactura ?? string.Empty,
                         Estado = v.Estado ?? string.Empty,
-                        MontoTotal = Convert.ToDecimal(v.MontoTotal ?? 0.0),
+                        MontoTotal = v.MontoTotal,
                         Referencia = v.Referencia ?? string.Empty
                     };
 
@@ -238,13 +248,13 @@ namespace AfigoBackend.Infraestructure.Services
                 }
                 else
                 {
-                    existing.Fecha = v.Fecha.HasValue ? DateOnly.FromDateTime(v.Fecha.Value) : existing.Fecha;
-                   // existing.Descripcion = v.Descripcion ?? existing.Descripcion;
+                    existing.Fecha = v.Fecha.HasValue ? v.Fecha.Value : existing.Fecha;
+                    existing.Descripcion = v.Descripcion ?? existing.Descripcion;
                     existing.IdTrabajador = v.IdTrabajador ?? existing.IdTrabajador;
                     existing.IdCliente = v.IdCliente ?? existing.IdCliente;
                     existing.numFactura = v.NumFactura ?? existing.numFactura;
                     existing.Estado = v.Estado ?? existing.Estado;
-                    existing.MontoTotal = Convert.ToDecimal(v.MontoTotal ?? (double)existing.MontoTotal);
+                    existing.MontoTotal = v.MontoTotal;
                     existing.Referencia = v.Referencia ?? existing.Referencia;
                 }
             }
@@ -323,17 +333,17 @@ namespace AfigoBackend.Infraestructure.Services
                     var cuenta = new Cuenta
                     {
                         IdProveedor = c.idProveedor,
-                        Monto = Convert.ToDecimal(c.monto),
+                        Monto = c.monto,
                         IdFactura = idFacturaInternal,
-                        Saldo = Convert.ToDecimal(c.saldo),
+                        Saldo = c.saldo,
                         Estado = c.estado
                     };
                     _app.Cuentas.Add(cuenta);
                 }
                 else
                 {
-                    existing.Monto = Convert.ToDecimal(c.monto);
-                    existing.Saldo = Convert.ToDecimal(c.saldo);
+                    existing.Monto = c.monto;
+                    existing.Saldo = c.saldo;
                     existing.Estado = c.estado ?? existing.Estado;
                 }
             }

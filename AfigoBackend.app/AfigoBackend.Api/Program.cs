@@ -3,7 +3,7 @@ using AfigoBackend.Infraestructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args); //TODO: habilitar https
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -76,8 +76,7 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(
             "http://localhost:3000",
             "http://localhost:5173",
-            "https://localhost:3000",
-            "https://localhost:5173",
+            "https://localhost:7122",
             "https://app.tudominio.com",
             "https://tudominio.com"
         )
@@ -110,8 +109,7 @@ var allowedOrigins = new[]
 {
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://localhost:3000",
-    "https://localhost:5173",
+    "https://localhost:7122",
     "https://app.tudominio.com",
     "https://tudominio.com"
 };
