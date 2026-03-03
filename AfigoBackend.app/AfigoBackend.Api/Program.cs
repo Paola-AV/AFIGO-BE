@@ -45,6 +45,10 @@ builder.Services
         // ⬇️ DESARROLLO o MISMO ORIGEN:
         options.Cookie.SameSite = SameSiteMode.Lax;
 
+        // Para peticiones cross-site desde otro dominio (FRONT != API) requiere HTTPS:
+        options.Cookie.SameSite = SameSiteMode.None; 
+
+
         // Inactividad: 20 minutos + sliding
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
         options.SlidingExpiration = true;
@@ -74,8 +78,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:3000",
+             "http://localhost:3000",
             "http://localhost:5173",
+            "http://localhost:5160", 
             "https://localhost:7122",
             "https://app.tudominio.com",
             "https://tudominio.com"
@@ -107,8 +112,9 @@ app.UseHttpsRedirection();
 // Define aquí los orígenes permitidos (mismos que en CORS)
 var allowedOrigins = new[]
 {
-    "http://localhost:3000",
+     "http://localhost:3000",
     "http://localhost:5173",
+    "http://localhost:5160",    
     "https://localhost:7122",
     "https://app.tudominio.com",
     "https://tudominio.com"

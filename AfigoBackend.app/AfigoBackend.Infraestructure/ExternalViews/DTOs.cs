@@ -59,8 +59,6 @@ namespace AfigoBackend.Infraestructure.ExternalViews
     [Keyless]
     public class ExternalCuentaView
     {
-        [Column("sucursal")]
-        public string? Sucursal { get; set; }
         [Column("id_proveedor")]
         public int idProveedor { get; set; }
         [Column("monto")]
@@ -127,7 +125,7 @@ namespace AfigoBackend.Infraestructure.ExternalViews
     public class ExternalVentaView
     {
         [Column("id_Venta")]
-        public int? IdVenta { get; set; }
+        public int IdVenta { get; set; }
 
         [Column("fecha")]
         public DateTime? Fecha { get; set; }
@@ -158,10 +156,10 @@ namespace AfigoBackend.Infraestructure.ExternalViews
     public class ExternalVentaDetalleView
     {
         [Column("id_venta")]
-        public int? IdVenta { get; set; }
+        public int IdVenta { get; set; }
 
         [Column("id_producto")]
-        public string? IdProducto { get; set; }
+        public string IdProducto { get; set; }
 
         [Column("cantidad")]
         public double? cantidad { get; set; }

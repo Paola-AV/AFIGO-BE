@@ -40,6 +40,6 @@ namespace AfigoBackend.Domain.Venta
         public string? Referencia { get; set; } = string.Empty;
 
         [Column("identificadorExt")]
-        public int? IdentificadorExt { get; set; }
+        public int IdentificadorExt { get; set; }
     }
 }

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AfigoBackend.Aplication\AfigoBackend.Application.csproj" />
+    <ProjectReference Include="..\AfigoBackend.Aplication\AfigoBackend.Aplication.csproj" />
     <ProjectReference Include="..\AfigoBackend.Infraestructure\AfigoBackend.Infraestructure.csproj" />
   </ItemGroup>
 

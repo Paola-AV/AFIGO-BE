@@ -114,7 +114,6 @@ namespace AfigoBackend.Infraestructure
             {
                 eb.HasNoKey();
                 eb.ToView("Cuenta");
-                eb.Property(c => c.Sucursal).HasColumnName("sucursal");
                 eb.Property(c => c.idProveedor).HasColumnName("id_proveedor");
                 eb.Property(c => c.monto).HasColumnName("monto");
                 eb.Property(c => c.idFactura).HasColumnName("id_factura");
