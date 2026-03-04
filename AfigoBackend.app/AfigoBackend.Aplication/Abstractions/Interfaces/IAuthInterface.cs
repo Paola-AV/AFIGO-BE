@@ -9,6 +9,7 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
 {
     public interface IAuthInterface
     {
+        Task ChangePasswordAsync(int userId, string currentPassword, string newPassword, CancellationToken ct);
         Task<Usuario?> LoginAsync(string correoOUsuario, string password, CancellationToken ct);
         Task RegistrarAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin, CancellationToken ct);
     }

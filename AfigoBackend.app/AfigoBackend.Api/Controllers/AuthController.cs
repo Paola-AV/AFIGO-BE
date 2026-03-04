@@ -94,6 +94,39 @@ public class AuthController : ControllerBase
         return Ok(new { message = "Sesión cerrada" });
     }
 
+
+    [HttpPost("change-password")]
+    [Authorize]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto, CancellationToken ct)
+    {
+        if (dto is null || string.IsNullOrWhiteSpace(dto.CurrentPassword) || string.IsNullOrWhiteSpace(dto.NewPassword))
+            return BadRequest(new { error = "Contraseña actual y nueva son obligatorias." });
+        
+      
+        try
+        {
+            await _service.ChangePasswordAsync(dto.UserId, dto.CurrentPassword, dto.NewPassword, ct);
+
+            return Ok(new { message = "Contraseña actualizada correctamente." });
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new { error = ex.Message });
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(new { error = ex.Message });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { error = ex.Message });
+        }
+    }
+
 }
 
 
@@ -113,3 +146,5 @@ public record UserLoginDto(
             string Nombre,
             int UsuarioAdmin
         );
+
+public record ChangePasswordDto(int UserId,string CurrentPassword, string NewPassword);

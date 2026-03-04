@@ -492,34 +492,54 @@ namespace AfigoBackend.Infraestructure.Services
                 {
                     ct.ThrowIfCancellationRequested();
 
-                    // intentar resolver factura interna por IdentificadorExt = id_factura externo (si viene)
-                    int idFacturaInternal = 0;
+                    // 1) Resolver factura interna (nullable)
+                    int? idFacturaInternal = null;
 
-                    int? extFacturaId = null;
                     if (!string.IsNullOrWhiteSpace(c.idFactura) && int.TryParse(c.idFactura, out var parsedId))
                     {
-                        extFacturaId = parsedId;
+                        var factura = await _app.Facturas
+                            .AsNoTracking()
+                            .FirstOrDefaultAsync(f => f.IdentificadorExt == parsedId, ct);
+
+                        if (factura == null)
+                        {
+                            // Si no existe la factura externa en el sistema interno, decide si
+                            // la omites (continue) o permites cuentas sin factura (deja null).
+                            // Aquí dejo 'continue' como en tu lógica:
+                            continue;
+                        }
+
+                        idFacturaInternal = factura.IdFactura;
                     }
 
-                    if (extFacturaId.HasValue)
+                    // 2) Resolver proveedor interno a partir del IdentificadorExt
+                    var proveedor = await _app.Proveedores
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(p => p.IdentificadorExt == c.idProveedor, ct);
+
+                    if (proveedor == null)
                     {
-                        var factura = await _app.Facturas.FirstOrDefaultAsync(f => f.IdentificadorExt == extFacturaId.Value, ct);
-                        if (factura != null) idFacturaInternal = factura.IdFactura;
+                        // No existe el proveedor interno para ese IdentificadorExt => omitir
+                        continue;
                     }
 
-                    // buscar si ya hay cuenta para el proveedor + factura (o crear nueva)
-                    var existing = await _app.Cuentas.FirstOrDefaultAsync(x => x.IdProveedor == c.idProveedor && x.IdFactura == idFacturaInternal, ct);
+                    var idProveedorInternal = proveedor.IdProveedor;
+
+                    // 3) Buscar cuenta existente usando IDS INTERNOS
+                    var existing = await _app.Cuentas.FirstOrDefaultAsync(
+                        x => x.IdProveedor == idProveedorInternal && x.IdFactura == idFacturaInternal, ct);
 
                     if (existing == null)
                     {
                         var cuenta = new Cuenta
                         {
-                            IdProveedor = c.idProveedor,
+                            IdProveedor = idProveedorInternal,   // ✅ interno
+                            IdFactura = idFacturaInternal,      // ✅ null si no hay factura
                             Monto = c.monto,
-                            IdFactura = idFacturaInternal,
                             Saldo = c.saldo,
                             Estado = c.estado
                         };
+
                         _app.Cuentas.Add(cuenta);
                     }
                     else
@@ -548,5 +568,41 @@ namespace AfigoBackend.Infraestructure.Services
             await SyncVentasAsync(ct);
             await SyncCuentasAsync(ct);
         }
+
+        public async Task SyncCuentas (CancellationToken ct = default)
+        {
+            await SyncCuentasAsync(ct);
+        }
+
+        public async Task SyncVentas(CancellationToken ct = default)
+        {
+            await SyncVentasAsync(ct);
+        }
+
+        public async Task SyncFacturas(CancellationToken ct = default)
+        {
+            await SyncFacturasAsync(ct);
+        }
+
+        public async Task SyncInventario(CancellationToken ct = default)
+        {
+            await SyncInventarioAsync(ct);
+        }
+
+        public async Task SyncGasto(CancellationToken ct = default)
+        {
+            await SyncGastosAsync(ct);
+        }
+
+        public async Task SyncProveedores(CancellationToken ct = default)
+        {
+            await SyncProveedoresAsync(ct);
+        }
+
+        public async Task SyncProductos(CancellationToken ct = default)
+        {
+            await SyncProductosAsync(ct);
+        }
     }
 }
+//saves por for each? multiples threads o batch y eliminacion de facturas/ventas

@@ -31,7 +31,7 @@ namespace AfigoBackend.Infraestructure.Services
             return ok ? user : null;
         }
 
-       
+
 
         public async Task RegistrarAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin, CancellationToken ct)
         {
@@ -53,6 +53,35 @@ namespace AfigoBackend.Infraestructure.Services
             await _db.AddAsync(usuario, ct);
             await _db.SaveChangesAsync(ct);
 
+
+        }
+
+        public async Task ChangePasswordAsync(int userId, string currentPassword, string newPassword, CancellationToken ct)
+        {
+            var user = await _db.Set<Usuario>()
+                                .FirstOrDefaultAsync(u => u.UserId == userId, ct);
+
+            if (user is null)
+                throw new KeyNotFoundException("Usuario no encontrado.");
+
+            var currentOk = _hasher.Verify(user.Contrasenia, currentPassword);
+            if (!currentOk)
+                throw new UnauthorizedAccessException("Contraseña actual incorrecta.");
+
+            var sameAsCurrent = _hasher.Verify(user.Contrasenia, newPassword);
+            if (sameAsCurrent)
+                throw new InvalidOperationException("La nueva contraseña no puede ser igual a la actual.");
+
+            ValidatePassword(newPassword);
+
+            user.Contrasenia = _hasher.Hash(newPassword);
+            await _db.SaveChangesAsync(ct);
+        }
+
+        private static void ValidatePassword(string password)
+        {
+            if (string.IsNullOrWhiteSpace(password) || password.Length < 8)
+                throw new ArgumentException("La contraseña debe tener al menos 8 caracteres.");
 
         }
     }
