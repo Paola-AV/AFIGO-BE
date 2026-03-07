@@ -1,11 +1,7 @@
-﻿using AfigoBackend.Domain.Pedido;
-using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AfigoBackend.Domain.Cuenta
 {
@@ -31,8 +27,5 @@ namespace AfigoBackend.Domain.Cuenta
         [Column("estado")]
         public string? Estado { get; set; }
 
-
-        //[ForeignKey(nameof(IdProveedor))]
-        //public Pedido.Pedido? Pedido { get; set; }
     }
 }

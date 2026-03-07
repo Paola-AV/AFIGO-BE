@@ -30,6 +30,7 @@ namespace AfigoBackend.Infraestructure
             services.AddScoped<IAuthInterface, AuthService>();
             services.AddScoped<IExternalSyncInterface, ExternalSyncService>();
             services.AddSingleton<IPasswordHasher, Pbkdf2PasswordHasher>();
+            services.AddScoped<IExcelExporter, ExcelExporter>();
             return services;
         }
     }

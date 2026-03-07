@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AfigoBackend.Aplication.Abstractions.Interfaces;
 using AfigoBackend.Infraestructure.Util;
+using DocumentFormat.OpenXml.Office2010.ExcelAc;
+using AfigoBackend.Aplication.DTO;
 
 namespace AfigoBackend.Infraestructure.Services
 {
@@ -42,7 +44,7 @@ namespace AfigoBackend.Infraestructure.Services
         public async Task<bool> UpdateAsync(Pedido pedido)
         {
             if (pedido is null || pedido.IdPedido <= 0) { return false; }
-               
+
 
             var entity = await _db.Pedidos.FindAsync(pedido.IdPedido);
 
@@ -78,6 +80,77 @@ namespace AfigoBackend.Infraestructure.Services
             _db.Pedidos.Remove(entity);
             await _db.SaveChangesAsync();
             return true;
+        }
+
+
+        public async Task<List<PedidoConDetalleDto>> GetPedidosConDetalles()
+        {
+            var query =
+                from p in _db.Pedidos.AsNoTracking()
+                where p.TipoPedido == Constants.TiposDocumento.Pedido
+                orderby p.FechaPedido
+                select new PedidoConDetalleDto
+                {
+                    IdPedido = p.IdPedido,
+                    FechaPedido = p.FechaPedido,
+                    Estado = p.Estado,
+                    IdUsuario = p.IdUsuario,
+                    NombreCliente = p.NombreCliente,
+                    FacturaElectronica = p.FacturaElectronica,
+                    DetalleFactura = p.DetalleFactura,
+                    MetodoEnvio = p.MetodoEnvio,
+                    DireccionEnvio = p.DireccionEnvio,
+                    UrgenciaEnvio = p.UrgenciaEnvio,
+                    TipoPedido = p.TipoPedido,
+                    Detalles = _db.DetallePedidos
+                        .AsNoTracking()
+                        .Where(d => d.PedidoId == p.IdPedido)
+                        .Select(d => new DetallePedidoDto
+                        {
+                            IdDetalle = d.IdDetalle,
+                            PedidoId = d.PedidoId,
+                            NombreProducto = d.NombreProducto,
+                            CantProducto = d.CantProducto,
+                            Descripcion = d.Descripcion
+                        })
+                        .ToList()
+                };
+            return await query.ToListAsync();
+        }
+
+        public async Task<List<PedidoConDetalleDto>> GetCotizacionesConDetalles()
+        {
+            var query =
+                from p in _db.Pedidos.AsNoTracking()
+                where p.TipoPedido == Constants.TiposDocumento.Cotizacion
+                orderby p.FechaPedido
+                select new PedidoConDetalleDto
+                {
+                    IdPedido = p.IdPedido,
+                    FechaPedido = p.FechaPedido,
+                    Estado = p.Estado,
+                    IdUsuario = p.IdUsuario,
+                    NombreCliente = p.NombreCliente,
+                    FacturaElectronica = p.FacturaElectronica,
+                    DetalleFactura = p.DetalleFactura,
+                    MetodoEnvio = p.MetodoEnvio,
+                    DireccionEnvio = p.DireccionEnvio,
+                    UrgenciaEnvio = p.UrgenciaEnvio,
+                    TipoPedido = p.TipoPedido,
+                    Detalles = _db.DetallePedidos
+                        .AsNoTracking()
+                        .Where(d => d.PedidoId == p.IdPedido)
+                        .Select(d => new DetallePedidoDto
+                        {
+                            IdDetalle = d.IdDetalle,
+                            PedidoId = d.PedidoId,
+                            NombreProducto = d.NombreProducto,
+                            CantProducto = d.CantProducto,
+                            Descripcion = d.Descripcion
+                        })
+                        .ToList()
+                };
+            return await query.ToListAsync();
         }
     }
 }

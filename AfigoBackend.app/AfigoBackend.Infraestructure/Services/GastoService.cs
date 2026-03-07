@@ -1,4 +1,5 @@
 ﻿using AfigoBackend.Aplication.Abstractions.Interfaces;
+using AfigoBackend.Aplication.DTO;
 using AfigoBackend.Domain.Gasto;
 using AfigoBackend.Domain.Venta;
 using Microsoft.EntityFrameworkCore;
@@ -17,5 +18,21 @@ namespace AfigoBackend.Infraestructure.Services
 
         public Task<List<Gasto>> GetAllAsync()
           => _db.Gastos.AsNoTracking().ToListAsync();
+
+        public async Task<List<GastoDto>> GetGastosParaExcel()
+        {
+            var query =
+                from f in _db.Gastos.AsNoTracking()
+                select new GastoDto
+                {
+                   Tipo = f.Tipo,
+                   Descripcion = f.Descripcion,
+                   Monto = f.Monto,
+                   Fecha = f.Fecha,
+                   Sucursal = f.Sucursal
+                };
+
+            return await query.ToListAsync();
+        }
     }
 }

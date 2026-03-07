@@ -1,4 +1,5 @@
-﻿using AfigoBackend.Domain.Gasto;
+﻿using AfigoBackend.Aplication.DTO;
+using AfigoBackend.Domain.Gasto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
     public interface IGastoInterface
     {
         Task<List<Gasto>> GetAllAsync();
+        Task<List<GastoDto>> GetGastosParaExcel();
     }
 }

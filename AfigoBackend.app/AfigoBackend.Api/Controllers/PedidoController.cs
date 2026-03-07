@@ -17,6 +17,8 @@ namespace AfigoBackend.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
+
+
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -42,6 +44,20 @@ namespace AfigoBackend.Api.Controllers
         public async Task<IActionResult> GetByTipoCotizacion()
         {
             var items = await _service.GetAllByTipoCotizacion();
+            return Ok(items);
+        }
+
+        [HttpGet("cotizacion/detalles")]
+        public async Task<IActionResult> GetByTipoCotizacionConDetalle()
+        {
+            var items = await _service.GetCotizacionesConDetalles();
+            return Ok(items);
+        }
+
+        [HttpGet("pedido/detalles")]
+        public async Task<IActionResult> GetByTipoPedidoConDetalle()
+        {
+            var items = await _service.GetPedidosConDetalles();
             return Ok(items);
         }
 

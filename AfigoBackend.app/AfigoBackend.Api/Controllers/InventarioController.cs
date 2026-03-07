@@ -8,12 +8,26 @@ namespace AfigoBackend.Api.Controllers
     public class InventarioController : ControllerBase
     {
         private readonly IInventarioInterface _service;
-        public InventarioController(IInventarioInterface service)
+        private readonly IExcelExporter _excel;
+        public InventarioController(IInventarioInterface service, IExcelExporter excel)
         {
             _service = service;
+            _excel = excel;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
+
+        [HttpGet("excel")]
+        public async Task<IActionResult> Export()
+        {
+            var cuentas = await _service.GetInventariosParaExcel();
+
+            var bytes = _excel.Create(cuentas, sheetName: "Cuentas");
+
+            const string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            var fileName = $"Cuentas_{DateTime.UtcNow:yyyy-MM-dd}.xlsx";
+            return File(bytes, contentType, fileName);
+        }
     }
 }

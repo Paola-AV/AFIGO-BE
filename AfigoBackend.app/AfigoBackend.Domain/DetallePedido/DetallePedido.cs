@@ -21,7 +21,6 @@ namespace AfigoBackend.Domain.DetallePedido
         public int PedidoId { get; set; }
 
         [Column("nombre_producto")]
-        [Required]
         public string NombreProducto { get; set; } = string.Empty;
 
         [Column("cant_producto")]
