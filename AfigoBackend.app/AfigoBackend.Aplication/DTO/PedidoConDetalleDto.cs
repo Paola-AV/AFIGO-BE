@@ -16,7 +16,7 @@ namespace AfigoBackend.Aplication.DTO
 
         public string Estado { get; set; } = string.Empty;
 
-        public int IdUsuario { get; set; }
+        public string nombreVendedor { get; set; }
 
         public string NombreCliente { get; set; } = string.Empty;
 

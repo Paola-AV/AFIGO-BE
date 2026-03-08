@@ -1,5 +1,6 @@
 ﻿
 using AfigoBackend.Infraestructure;
+using AfigoBackend.Infraestructure.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,6 +30,8 @@ builder.Services.AddDbContext<ExternalDbContext>(options =>
 
 // DI propia (services, hasher, etc.)
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddSyncScheduler();
+
 
 // Cookie Auth
 builder.Services

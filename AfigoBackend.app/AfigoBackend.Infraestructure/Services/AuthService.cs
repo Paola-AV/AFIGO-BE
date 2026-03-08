@@ -1,5 +1,6 @@
 ﻿using AfigoBackend.Aplication.Abstractions.Interfaces;
 using AfigoBackend.Domain.Usuario;
+using AfigoBackend.Domain.Trabajador;
 using AfigoBackend.Infraestructure.Util;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -51,6 +52,39 @@ namespace AfigoBackend.Infraestructure.Services
             };
 
             await _db.AddAsync(usuario, ct);
+            await _db.SaveChangesAsync(ct);
+
+
+        }
+
+        public async Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin,DateOnly fechaInicio, decimal vacacionesDisponibles, CancellationToken ct)
+        {
+
+            var existe = await _db.Set<Usuario>()
+                                  .AsNoTracking()
+                                  .AnyAsync(u => u.Correo == correo, ct);
+            if (existe) throw new InvalidOperationException("Correo ya está registrado.");
+
+            var usuario = new Usuario
+            {
+                Nombre = nombre,
+                Correo = correo,
+                NombreDeUsuario = nombreUsuario,
+                Contrasenia = _hasher.Hash(password),
+                UsuarioAdmin = isAdmin
+            };
+
+            var User=await _db.AddAsync(usuario, ct);
+            await _db.SaveChangesAsync(ct);
+
+            var trabajador = new Trabajador
+            {
+                IdUsuario = usuario.UserId, 
+                FechaInicio = fechaInicio,
+                VacacionesDisponibles = vacacionesDisponibles
+            };
+
+            await _db.AddAsync(trabajador, ct);
             await _db.SaveChangesAsync(ct);
 
 

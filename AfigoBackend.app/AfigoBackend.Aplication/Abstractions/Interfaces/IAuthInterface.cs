@@ -12,5 +12,6 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
         Task ChangePasswordAsync(int userId, string currentPassword, string newPassword, CancellationToken ct);
         Task<Usuario?> LoginAsync(string correoOUsuario, string password, CancellationToken ct);
         Task RegistrarAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin, CancellationToken ct);
+        Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin, DateOnly fechaInicio, decimal vacacionesDisponibles, CancellationToken ct);
     }
 }

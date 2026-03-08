@@ -5,11 +5,14 @@ using AfigoBackend.Domain.Gasto;
 using AfigoBackend.Domain.Inventario;
 using AfigoBackend.Domain.Producto;
 using AfigoBackend.Domain.Proveedor;
+using AfigoBackend.Domain.Sincronizacion;
 using AfigoBackend.Domain.Venta;
 using AfigoBackend.Domain.VentaDetalle;
 using AfigoBackend.Infraestructure.ExternalViews;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Reflection.Metadata;
+using AfigoBackend.Infraestructure.Util;
 
 namespace AfigoBackend.Infraestructure.Services
 {
@@ -86,6 +89,24 @@ namespace AfigoBackend.Infraestructure.Services
 
                     if (_app.ChangeTracker.HasChanges())
                         await _app.SaveChangesAsync(ct);
+
+                  
+                    var prodSync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Productos);
+                    if (prodSync.Any())
+                    {
+                        var sync = prodSync.First();
+                        sync.UltimaFecha = DateTime.UtcNow;
+                        _app.Sincronizaciones.Update(sync);
+                    }
+                    else
+                    {
+                        var sync = new Sincronizacion
+                        {
+                            Tipo = Constants.TiposSync.Productos,
+                            UltimaFecha = DateTime.UtcNow
+                        };
+                        _app.Sincronizaciones.Add(sync);
+                    }
                 }
                 finally
                 {
@@ -126,6 +147,23 @@ namespace AfigoBackend.Infraestructure.Services
 
                 if (_app.ChangeTracker.HasChanges())
                     await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Gastos);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Gastos,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {
@@ -168,6 +206,23 @@ namespace AfigoBackend.Infraestructure.Services
 
                 if (_app.ChangeTracker.HasChanges())
                     await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Inventarios);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Inventarios,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {
@@ -219,6 +274,23 @@ namespace AfigoBackend.Infraestructure.Services
                 }
 
                 await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Proveedores);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Proveedores,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {
@@ -276,6 +348,23 @@ namespace AfigoBackend.Infraestructure.Services
                 }
 
                 await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Facturas);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Facturas,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {
@@ -352,6 +441,23 @@ namespace AfigoBackend.Infraestructure.Services
 
                 if (processedExtIds.Count > 0)
                     await SyncVentaDetallesAsync(processedExtIds, ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Ventas);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Ventas,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {
@@ -551,6 +657,23 @@ namespace AfigoBackend.Infraestructure.Services
                 }
 
                 await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Cuentas);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Cuentas,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
             }
             catch (Exception ex)
             {

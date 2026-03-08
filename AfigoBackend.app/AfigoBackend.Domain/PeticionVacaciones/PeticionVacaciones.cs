@@ -26,5 +26,8 @@ namespace AfigoBackend.Domain.PeticionVacaciones
 
         [Column("estado")]
         public string Estado { get; set; } = string.Empty;
+
+        [Column("fechaCreado")]
+        public DateTime? FechaCreado { get; set; }
     }
 }

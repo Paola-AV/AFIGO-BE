@@ -85,8 +85,12 @@ namespace AfigoBackend.Infraestructure.Services
 
         public async Task<List<PedidoConDetalleDto>> GetPedidosConDetalles()
         {
+
             var query =
                 from p in _db.Pedidos.AsNoTracking()
+                join u in _db.Usuarios.AsNoTracking()
+                    on p.IdUsuario equals u.UserId into gj // group join
+                from u in gj.DefaultIfEmpty() // left join
                 where p.TipoPedido == Constants.TiposDocumento.Pedido
                 orderby p.FechaPedido
                 select new PedidoConDetalleDto
@@ -94,7 +98,7 @@ namespace AfigoBackend.Infraestructure.Services
                     IdPedido = p.IdPedido,
                     FechaPedido = p.FechaPedido,
                     Estado = p.Estado,
-                    IdUsuario = p.IdUsuario,
+                    nombreVendedor = u != null ? u.Nombre : null,
                     NombreCliente = p.NombreCliente,
                     FacturaElectronica = p.FacturaElectronica,
                     DetalleFactura = p.DetalleFactura,
@@ -115,13 +119,18 @@ namespace AfigoBackend.Infraestructure.Services
                         })
                         .ToList()
                 };
+
             return await query.ToListAsync();
         }
 
         public async Task<List<PedidoConDetalleDto>> GetCotizacionesConDetalles()
         {
+
             var query =
                 from p in _db.Pedidos.AsNoTracking()
+                join u in _db.Usuarios.AsNoTracking()
+                    on p.IdUsuario equals u.UserId into gj // group join
+                from u in gj.DefaultIfEmpty() // left join
                 where p.TipoPedido == Constants.TiposDocumento.Cotizacion
                 orderby p.FechaPedido
                 select new PedidoConDetalleDto
@@ -129,7 +138,7 @@ namespace AfigoBackend.Infraestructure.Services
                     IdPedido = p.IdPedido,
                     FechaPedido = p.FechaPedido,
                     Estado = p.Estado,
-                    IdUsuario = p.IdUsuario,
+                    nombreVendedor = u != null ? u.Nombre : null,
                     NombreCliente = p.NombreCliente,
                     FacturaElectronica = p.FacturaElectronica,
                     DetalleFactura = p.DetalleFactura,

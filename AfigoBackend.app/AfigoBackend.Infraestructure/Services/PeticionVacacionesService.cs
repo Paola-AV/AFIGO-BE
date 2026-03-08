@@ -28,6 +28,7 @@ namespace AfigoBackend.Infraestructure.Services
                     .ToListAsync();
         public async Task<PeticionVacaciones> CreateAsync(PeticionVacaciones peticion)
         {
+            peticion.FechaCreado = DateTime.UtcNow;
             _db.PeticionesVacaciones.Add(peticion);
             await _db.SaveChangesAsync();
             return peticion;

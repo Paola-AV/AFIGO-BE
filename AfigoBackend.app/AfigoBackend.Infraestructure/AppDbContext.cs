@@ -18,6 +18,7 @@ using AfigoBackend.Domain.Proveedor;
 using Microsoft.EntityFrameworkCore;
 using AfigoBackend.Domain.Trabajador;
 using AfigoBackend.Domain.PeticionVacaciones;
+using AfigoBackend.Domain.Sincronizacion;
 
 namespace AfigoBackend.Infraestructure
 {
@@ -40,6 +41,7 @@ namespace AfigoBackend.Infraestructure
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<VentaDetalle> VentaDetalles { get; set; }
+        public DbSet<Sincronizacion> Sincronizaciones { get; set; }
 
 
     }

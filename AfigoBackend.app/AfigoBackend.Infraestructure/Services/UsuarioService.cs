@@ -28,7 +28,6 @@ namespace AfigoBackend.Infraestructure.Services
             await _db.SaveChangesAsync();
             return usuario;
         }
-
         public async Task<bool> UpdateAsync(Usuario usuario)
         {
 

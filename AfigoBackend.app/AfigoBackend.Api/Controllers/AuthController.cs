@@ -29,12 +29,14 @@ public class AuthController : ControllerBase
 
         try
         {
-            await _service.RegistrarAsync(
+            await _service.RegistrarUsuarioTrabajadorAsync(
                 correo,
                 dto.Nombre?.Trim() ?? string.Empty,
                 dto.Password,
                 nombreUsuario,
                 dto.IsAdmin ? 1 : 0, 
+                dto.FechaInicio,
+                dto.VacacionesDisponibles,
                 ct);
 
             return Ok(new { message = "Usuario registrado" });
@@ -136,7 +138,9 @@ public record RegisterDto(
     string Nombre,
     string Password,
     string? NombreUsuario,
-    bool IsAdmin 
+    bool IsAdmin,
+    DateOnly FechaInicio,
+    decimal VacacionesDisponibles
 );
 
 public record LoginDto(string CorreoOUsuario, string Password);
