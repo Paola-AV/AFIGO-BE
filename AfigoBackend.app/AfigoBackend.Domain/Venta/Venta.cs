@@ -21,8 +21,8 @@ namespace AfigoBackend.Domain.Venta
         [Column("descripcion")]
         public string? Descripcion { get; set; } = string.Empty;
 
-        [Column("id_trabajador")]
-        public int? IdTrabajador { get; set; }
+        [Column("id_vendedor")]
+        public int? IdVendedor { get; set; }
 
         [Column("id_cliente")]
         public int? IdCliente { get; set; }

@@ -21,17 +21,17 @@ namespace AfigoBackend.Infraestructure.Services
         public Task<List<Venta>> GetAllAsync()
           => _db.Ventas.AsNoTracking().ToListAsync();
 
-        public Task<List<VentaDTO>> GetByTrabajadorId(int id)
+        public Task<List<VentaDTO>> GetByTrabajadorId(int id)//cambio
         {
             return _db.Ventas
                 .AsNoTracking()
-                .Where(v => v.IdTrabajador == id)
+                .Where(v => v.IdVendedor == id)
                 .Select(v => new VentaDTO
                 {
                     IdVenta = v.IdVenta,
                     Fecha = v.Fecha,
                     Descripcion = v.Descripcion,
-                    IdTrabajador = v.IdTrabajador,
+                    IdTrabajador = v.IdVendedor,
                     IdCliente = v.IdCliente,
                     numFactura = v.numFactura,
                     Estado = v.Estado,

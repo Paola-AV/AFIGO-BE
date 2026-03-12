@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AfigoBackend.Domain.Sincronizacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
 {
     public interface IExternalSyncInterface
     {
+        Task<List<Sincronizacion>> GetAllSyncEstadosAsync();
         Task SyncAllAsync(CancellationToken ct = default);
         Task SyncCuentas(CancellationToken ct = default);
         Task SyncFacturas(CancellationToken ct = default);

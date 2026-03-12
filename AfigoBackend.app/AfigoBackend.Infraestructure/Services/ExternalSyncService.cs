@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Reflection.Metadata;
 using AfigoBackend.Infraestructure.Util;
+using AfigoBackend.Domain.Vendedor;
 
 namespace AfigoBackend.Infraestructure.Services
 {
@@ -308,8 +309,7 @@ namespace AfigoBackend.Infraestructure.Services
                 foreach (var f in external)
                 {
                     ct.ThrowIfCancellationRequested();
-                    // Normalizar id_proveedor: quitar espacios, eliminar cualquier no dígito,
-                    // quitar ceros a la izquierda y convertir a int. Si no es convertible, saltar.
+
                     var raw = f.IdProveedor ?? string.Empty;
                     raw = raw.Trim();
                     var digitsOnly = System.Text.RegularExpressions.Regex.Replace(raw, @"\D", "");
@@ -368,10 +368,64 @@ namespace AfigoBackend.Infraestructure.Services
             }
             catch (Exception ex)
             {
-                // Manejo de errores, logging, etc.
                 Console.WriteLine($"Error en SyncFacturasAsync: {ex.Message}");
             }
         }
+
+        public async Task SyncVendedoresAsync(CancellationToken ct = default)
+        {
+            try
+            {
+                var external = await _ext.Vendedores.AsNoTracking().ToListAsync(ct);
+
+                foreach (var v in external)
+                {
+                    ct.ThrowIfCancellationRequested();
+
+                    var existing = await _app.Vendedores.FirstOrDefaultAsync(x => x.IdVendedorExt == v.IdVendedor, ct);
+
+                    if (existing == null)
+                    {
+                        var nuevo = new Vendedor
+                        {
+                            IdBodega = v.IdBodega,
+                            IdVendedorExt=v.IdVendedor,
+                            Nombre = v.Nombre
+                        };
+                        _app.Vendedores.Add(nuevo);
+                    }
+                    else
+                    {
+                        existing.IdBodega= v.IdBodega;
+                        existing.Nombre = v.Nombre;
+                    }
+                }
+
+                await _app.SaveChangesAsync(ct);
+
+                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Proveedores);
+                if (Sync.Any())
+                {
+                    var sync = Sync.First();
+                    sync.UltimaFecha = DateTime.UtcNow;
+                    _app.Sincronizaciones.Update(sync);
+                }
+                else
+                {
+                    var sync = new Sincronizacion
+                    {
+                        Tipo = Constants.TiposSync.Proveedores,
+                        UltimaFecha = DateTime.UtcNow
+                    };
+                    _app.Sincronizaciones.Add(sync);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en SyncVendedoresAsync: {ex.Message}");
+            }
+        }
+
 
         public async Task SyncVentasAsync(CancellationToken ct = default)
         {
@@ -379,22 +433,14 @@ namespace AfigoBackend.Infraestructure.Services
             {
                 var cutoff = new DateTime(2025, 1, 1);
 
-                var external = await _ext.Ventas
-                    .AsNoTracking()
-                    .Where(i => i.Fecha >= cutoff)
-                    .ToListAsync(ct);
+                var external = await _ext.Ventas.AsNoTracking().Where(i => i.Fecha >= cutoff).ToListAsync(ct);
 
                 if (external.Count == 0)
                     return;
 
-                var processedExtIds = external
-                    .Select(v => v.IdVenta)
-                    .Distinct()
-                    .ToList();
+                var processedExtIds = external.Select(v => v.IdVenta).Distinct().ToList();
 
-                var existingVentas = await _app.Ventas
-                    .Where(x => processedExtIds.Contains(x.IdentificadorExt))
-                    .ToListAsync(ct);
+                var existingVentas = await _app.Ventas.Where(x => processedExtIds.Contains(x.IdentificadorExt)).ToListAsync(ct);
 
                 var existingByExtId = existingVentas.ToDictionary(v => v.IdentificadorExt);
 
@@ -412,7 +458,7 @@ namespace AfigoBackend.Infraestructure.Services
                             IdentificadorExt = extId,
                             Fecha = v.Fecha ?? default,
                             Descripcion = v.Descripcion ?? string.Empty,
-                            IdTrabajador = v.IdTrabajador ?? null,
+                            IdVendedor = v.IdTrabajador ?? null,
                             IdCliente = v.IdCliente ?? null,
                             numFactura = v.NumFactura ?? string.Empty,
                             Estado = v.Estado ?? string.Empty,
@@ -427,7 +473,7 @@ namespace AfigoBackend.Infraestructure.Services
                     {
                         if (v.Fecha.HasValue) existing.Fecha = v.Fecha.Value;
                         if (v.Descripcion != null) existing.Descripcion = v.Descripcion;
-                        if (v.IdTrabajador.HasValue) existing.IdTrabajador = v.IdTrabajador.Value;
+                        if (v.IdTrabajador.HasValue) existing.IdVendedor = v.IdTrabajador.Value;
                         if (v.IdCliente.HasValue) existing.IdCliente = v.IdCliente.Value;
                         if (v.NumFactura != null) existing.numFactura = v.NumFactura;
                         if (v.Estado != null) existing.Estado = v.Estado;
@@ -459,9 +505,8 @@ namespace AfigoBackend.Infraestructure.Services
                     _app.Sincronizaciones.Add(sync);
                 }
             }
-            catch (Exception ex)
-            {
-                // Manejo de errores, logging, etc.
+            catch (Exception ex) { 
+
                 Console.WriteLine($"Error en SyncVentasAsync: {ex.Message}");
             }
         }
@@ -473,12 +518,10 @@ namespace AfigoBackend.Infraestructure.Services
                 if (extVentaIds == null)
                     return;
 
-                // Materializa a lista distinta para evitar enumeraciones múltiples
                 var ventaIdsList = extVentaIds.Distinct().ToList();
                 if (ventaIdsList.Count == 0)
                     return;
 
-                // 1) Trae detalles externos de las ventas indicadas
                 var externalDetalles = await _ext.VentaDetalles
                     .AsNoTracking()
                     .Where(d => ventaIdsList.Contains(d.IdVenta))
@@ -487,7 +530,6 @@ namespace AfigoBackend.Infraestructure.Services
                 if (externalDetalles.Count == 0)
                     return;
 
-                // 2) Mapeo Ventas internas: IdentificadorExt -> Venta.IdVenta (clave interna)
                 var ventasInternas = await _app.Ventas
                     .AsNoTracking()
                     .Where(v => ventaIdsList.Contains(v.IdentificadorExt))
@@ -496,13 +538,11 @@ namespace AfigoBackend.Infraestructure.Services
 
                 var ventaExtToIntId = ventasInternas.ToDictionary(v => v.IdentificadorExt, v => v.IdVenta);
 
-                // 3) Recolecta todos los IdProducto externos que aparecen
                 var extProductoIds = externalDetalles
                     .Select(d => d.IdProducto)
                     .Distinct()
                     .ToList();
 
-                // 4) Mapeo Productos internos: IdentificadorExt -> Producto.IdProducto
                 var productosInternos = await _app.Productos
                     .AsNoTracking()
                     .Where(p => extProductoIds.Contains(p.IdentificadorExt))
@@ -511,8 +551,6 @@ namespace AfigoBackend.Infraestructure.Services
 
                 var prodExtToIntId = productosInternos.ToDictionary(p => p.IdentificadorExt, p => p.IdProducto);
 
-                // 5) Proyecta los pares internos (ventaIdInt, productoIdInt) que existen en el externo
-                //    y que además tienen mapeo interno válido
                 var paresInternos = externalDetalles
                     .Select(d =>
                     {
@@ -523,7 +561,7 @@ namespace AfigoBackend.Infraestructure.Services
                             Ok = okVenta && okProd,
                             VentaIdInt = vInt,
                             ProductoIdInt = pInt,
-                            CantidadOrigen = d.cantidad // puede ser null
+                            CantidadOrigen = d.cantidad 
                         };
                     })
                     .Where(x => x.Ok)
@@ -532,7 +570,6 @@ namespace AfigoBackend.Infraestructure.Services
                 if (paresInternos.Count == 0)
                     return;
 
-                // 6) Trae detalles internos existentes para esos pares, en un solo roundtrip
                 var ventaIdsInt = paresInternos.Select(x => x.VentaIdInt).Distinct().ToList();
                 var prodIdsInt = paresInternos.Select(x => x.ProductoIdInt).Distinct().ToList();
 
@@ -540,20 +577,16 @@ namespace AfigoBackend.Infraestructure.Services
                     .Where(d => ventaIdsInt.Contains(d.IdVenta) && prodIdsInt.Contains(d.IdProducto))
                     .ToListAsync(ct);
 
-                // Para lookup rápido por (IdVenta, IdProducto)
                 var detallesMap = detallesExistentes.ToDictionary(
                     d => (d.IdVenta, d.IdProducto),
                     d => d);
 
-                // 7) Upsert en memoria (acumula nuevos y actualiza existentes)
                 var nuevos = new List<VentaDetalle>();
 
                 foreach (var x in paresInternos)
                 {
                     ct.ThrowIfCancellationRequested();
 
-                    // Define bien el tipo de Cantidad en tu modelo (int o decimal)
-                    // Aquí asumo int y redondeo hacia abajo si decimal
                     var cantidadInt = x.CantidadOrigen.HasValue
                         ? (int)Math.Floor(Convert.ToDecimal(x.CantidadOrigen.Value))
                         : 0;
@@ -598,7 +631,6 @@ namespace AfigoBackend.Infraestructure.Services
                 {
                     ct.ThrowIfCancellationRequested();
 
-                    // 1) Resolver factura interna (nullable)
                     int? idFacturaInternal = null;
 
                     if (!string.IsNullOrWhiteSpace(c.idFactura) && int.TryParse(c.idFactura, out var parsedId))
@@ -609,29 +641,24 @@ namespace AfigoBackend.Infraestructure.Services
 
                         if (factura == null)
                         {
-                            // Si no existe la factura externa en el sistema interno, decide si
-                            // la omites (continue) o permites cuentas sin factura (deja null).
-                            // Aquí dejo 'continue' como en tu lógica:
+
                             continue;
                         }
 
                         idFacturaInternal = factura.IdFactura;
                     }
 
-                    // 2) Resolver proveedor interno a partir del IdentificadorExt
                     var proveedor = await _app.Proveedores
                         .AsNoTracking()
                         .FirstOrDefaultAsync(p => p.IdentificadorExt == c.idProveedor, ct);
 
                     if (proveedor == null)
                     {
-                        // No existe el proveedor interno para ese IdentificadorExt => omitir
                         continue;
                     }
 
                     var idProveedorInternal = proveedor.IdProveedor;
 
-                    // 3) Buscar cuenta existente usando IDS INTERNOS
                     var existing = await _app.Cuentas.FirstOrDefaultAsync(
                         x => x.IdProveedor == idProveedorInternal && x.IdFactura == idFacturaInternal, ct);
 
@@ -639,8 +666,8 @@ namespace AfigoBackend.Infraestructure.Services
                     {
                         var cuenta = new Cuenta
                         {
-                            IdProveedor = idProveedorInternal,   // ✅ interno
-                            IdFactura = idFacturaInternal,      // ✅ null si no hay factura
+                            IdProveedor = idProveedorInternal,   
+                            IdFactura = idFacturaInternal,      
                             Monto = c.monto,
                             Saldo = c.saldo,
                             Estado = c.estado
@@ -688,17 +715,20 @@ namespace AfigoBackend.Infraestructure.Services
             await SyncGastosAsync(ct);
             await SyncInventarioAsync(ct);
             await SyncFacturasAsync(ct);
+            await SyncVendedoresAsync(ct);
             await SyncVentasAsync(ct);
             await SyncCuentasAsync(ct);
         }
 
         public async Task SyncCuentas (CancellationToken ct = default)
         {
+            await SyncFacturasAsync(ct);
             await SyncCuentasAsync(ct);
         }
 
         public async Task SyncVentas(CancellationToken ct = default)
         {
+            await SyncVendedoresAsync (ct);
             await SyncVentasAsync(ct);
         }
 
@@ -726,6 +756,9 @@ namespace AfigoBackend.Infraestructure.Services
         {
             await SyncProductosAsync(ct);
         }
+
+        public Task<List<Sincronizacion>> GetAllSyncEstadosAsync()
+          => _app.Sincronizaciones.AsNoTracking().ToListAsync();
     }
 }
 //saves por for each? multiples threads o batch y eliminacion de facturas/ventas

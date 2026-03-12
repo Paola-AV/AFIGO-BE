@@ -10,6 +10,9 @@ namespace AfigoBackend.Api.Controllers
         private readonly IExternalSyncInterface _syncService;
         public ExternalSyncController(IExternalSyncInterface syncService) => _syncService = syncService;
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll() => Ok(await _syncService.GetAllSyncEstadosAsync());
+
         [HttpPost("sync")]
         public async Task<IActionResult> SyncAll()
         {

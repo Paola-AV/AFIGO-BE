@@ -164,4 +164,17 @@ namespace AfigoBackend.Infraestructure.ExternalViews
         [Column("cantidad")]
         public double? cantidad { get; set; }
     }
+
+    [Keyless]
+    public class ExternalVendedorView
+    {
+        [Column("id_vendedor")]
+        public int IdVendedor { get; set; }
+
+        [Column("id_bodega")]
+        public int IdBodega { get; set; }
+
+        [Column("Nombre")]
+        public string Nombre { get; set; }
+    }
 }

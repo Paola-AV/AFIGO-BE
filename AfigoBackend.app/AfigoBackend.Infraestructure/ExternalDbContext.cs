@@ -20,7 +20,7 @@ namespace AfigoBackend.Infraestructure
         public DbSet<ExternalVentaView> Ventas { get; set; } = null!;
         public DbSet<ExternalVentaDetalleView> VentaDetalles { get; set; } = null!;
         public DbSet<ExternalCuentaView> Cuentas { get; set; } = null!;
-
+        public DbSet<ExternalVendedorView> Vendedores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -119,6 +119,15 @@ namespace AfigoBackend.Infraestructure
                 eb.Property(c => c.idFactura).HasColumnName("id_factura");
                 eb.Property(c => c.estado).HasColumnName("estado");
                 eb.Property(c => c.saldo).HasColumnName("saldo");
+            });
+
+            modelBuilder.Entity<ExternalVendedorView>(eb =>
+            {
+                eb.HasNoKey();
+                eb.ToView("Vendedores");
+                eb.Property(c => c.IdVendedor).HasColumnName("id_vendedor");
+                eb.Property(c => c.IdBodega).HasColumnName("id_bodega");
+                eb.Property(c => c.Nombre).HasColumnName("nombre");
             });
 
             base.OnModelCreating(modelBuilder);
