@@ -23,9 +23,10 @@ namespace AfigoBackend.Infraestructure.Util
             public static readonly string Facturas = "FACTURAS";
             public static readonly string Ventas = "VENTAS";
             public static readonly string Productos = "PRODUCTOS";
-            public static readonly string VentaDetalles = "VENTA_DETALLES";
+            public static readonly string VentaDetalles = "VENTA DETALLES";
             public static readonly string Proveedores = "PROVEEDORES";
             public static readonly string Clientes = "CLIENTES";
+            public static readonly string Vendedores = "VENDEDORES";
         }
     }
 

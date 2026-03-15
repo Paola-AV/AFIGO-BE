@@ -15,7 +15,12 @@ namespace AfigoBackend.Api.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IAuthInterface _service;
-    public AuthController(IAuthInterface service) => _service = service;
+
+    private readonly ITrabajadorInterface _trabajadorService;
+    public AuthController(IAuthInterface service, ITrabajadorInterface trabajadorService) {
+        _service = service;
+        _trabajadorService = trabajadorService;
+    }
 
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterDto dto, CancellationToken ct)
@@ -37,6 +42,8 @@ public class AuthController : ControllerBase
                 dto.IsAdmin ? 1 : 0, 
                 dto.FechaInicio,
                 dto.VacacionesDisponibles,
+                dto.Vendedor.HasValue && dto.Vendedor.Value ? 1 : 0,
+                dto.NombreVendedor?.Trim() ?? string.Empty,
                 ct);
 
             return Ok(new { message = "Usuario registrado" });
@@ -83,7 +90,10 @@ public class AuthController : ControllerBase
 
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProps);
 
-        var resp = new UserLoginDto(user.UserId, user.Nombre ?? string.Empty, user.UsuarioAdmin);
+        var trabajador = await _trabajadorService.GetByUsuarioIdAsync(user.UserId);
+        var esVendedor = trabajador?.Vendedor ?? 0;
+        var nombreVendedor = trabajador?.NombreVendedor ?? "";
+        var resp = new UserLoginDto(user.UserId, user.Nombre ?? string.Empty, user.UsuarioAdmin, esVendedor, nombreVendedor);
         return Ok(resp);
     }
 
@@ -140,7 +150,9 @@ public record RegisterDto(
     string? NombreUsuario,
     bool IsAdmin,
     DateOnly FechaInicio,
-    decimal VacacionesDisponibles
+    decimal VacacionesDisponibles,
+    bool? Vendedor,
+    string? NombreVendedor
 );
 
 public record LoginDto(string CorreoOUsuario, string Password);
@@ -148,7 +160,9 @@ public record LoginDto(string CorreoOUsuario, string Password);
 public record UserLoginDto(
             int UserId,
             string Nombre,
-            int UsuarioAdmin
+            int UsuarioAdmin,
+            int? Vendedor, 
+            string NombreVendedor
         );
 
 public record ChangePasswordDto(int UserId,string CurrentPassword, string NewPassword);

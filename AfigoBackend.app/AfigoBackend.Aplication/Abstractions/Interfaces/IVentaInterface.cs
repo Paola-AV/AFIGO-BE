@@ -11,6 +11,10 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
     public interface IVentaInterface
     {
         Task<List<Venta>> GetAllAsync();
+        Task<Dictionary<string, double>> GetAllComisionMensualPorVendedorAsync();
         Task<List<VentaDTO>> GetByTrabajadorId(int id);
+        Task<double> GetComisionMensualPorVendedorAsync(string nombreVendedor);
+        Task<List<VentaGetDto>> GetVentasConDetallesAsync( DateTime desde, DateTime hasta);
+        Task<List<VentaGetDto>> GetVentasConDetallesPorVendedorAsync(DateTime desde, DateTime hasta, string nombreVendedor);
     }
 }

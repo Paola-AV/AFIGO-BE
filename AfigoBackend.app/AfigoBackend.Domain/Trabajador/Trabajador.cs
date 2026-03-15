@@ -23,5 +23,11 @@ namespace AfigoBackend.Domain.Trabajador
 
         [Column("vacaciones_disponibles")]
         public decimal VacacionesDisponibles { get; set; }
+
+        [Column("vendedor")]
+        public int? Vendedor { get; set; }
+
+        [Column("nombre_vendedor")]
+        public string? NombreVendedor { get; set; }
     }
 }

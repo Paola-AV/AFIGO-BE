@@ -27,6 +27,7 @@ namespace AfigoBackend.Infraestructure
             services.AddScoped <IVentaDetalleInterface, VentaDetalleService>();
             services.AddScoped <IProveedorInterface, ProveedorService>();
             services.AddScoped <IClienteInterface, ClienteService>();
+            services.AddScoped <IVendedorInterface, VendedorService>();
             services.AddScoped<IAuthInterface, AuthService>();
             services.AddScoped<IExternalSyncInterface, ExternalSyncService>();
             services.AddSingleton<IPasswordHasher, Pbkdf2PasswordHasher>();

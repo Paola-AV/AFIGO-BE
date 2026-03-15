@@ -6,36 +6,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AfigoBackend.Domain.Usuario
+namespace AfigoBackend.Aplication.DTO
 {
-    [Table("Usuario")]
-    public class Usuario
+    public class UsuarioPerfilDto
     {
-
-        [Key]
-        [Column("user_id")]
         public int UserId { get; set; }
-
-        [Column("nombre")]
-        [Required]
         public string Nombre { get; set; } = string.Empty;
 
-        [Column("direccion")]
         public string? Correo { get; set; }
 
-        [Column("usuario_admin")]
         public int UsuarioAdmin { get; set; }
 
-        [Column("nombre_de_usuario")]
-        [Required]
         public string NombreDeUsuario { get; set; } = string.Empty;
 
-        [Column("contrasenia")]
-        [Required]
         public string Contrasenia { get; set; } = string.Empty;
 
-        [Column("activo")]
-        public int Activo { get; set; } 
+        public int Activo { get; set; }
 
+        public TrabajadorPerfilDto Trabajador { get; set; } = new TrabajadorPerfilDto();
+    }
+    public class TrabajadorPerfilDto
+    {
+
+        public int IdTrabajador { get; set; }
+
+        public int IdUsuario { get; set; }
+
+        public DateOnly FechaInicio { get; set; }
+
+        public decimal VacacionesDisponibles { get; set; }
+
+        public int? Vendedor { get; set; }
+
+        public string? NombreVendedor { get; set; }
     }
 }

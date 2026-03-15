@@ -23,7 +23,7 @@ namespace AfigoBackend.Infraestructure.Extensions
                     .ForJob(jobKey)
                     .WithIdentity("SyncJob-trigger")
                     .WithCronSchedule(
-                        "0 0 2 * * ?", // Todos los días a las 2:00 AM
+                        "0 20 21 * * ?", // Todos los días a las 2:00 AM
                         x => x.InTimeZone(
                             TimeZoneInfo.FindSystemTimeZoneById("America/Costa_Rica")
                         )

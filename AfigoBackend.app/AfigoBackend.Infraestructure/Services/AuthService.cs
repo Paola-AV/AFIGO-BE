@@ -28,6 +28,7 @@ namespace AfigoBackend.Infraestructure.Services
                                    || u.NombreDeUsuario == correoOUsuario, ct);
 
             if (user is null) return null;
+            if (user.Activo == 0) return null;
             var ok = _hasher.Verify(user.Contrasenia, password);
             return ok ? user : null;
         }
@@ -48,7 +49,8 @@ namespace AfigoBackend.Infraestructure.Services
                 Correo = correo,
                 NombreDeUsuario = nombreUsuario,
                 Contrasenia = _hasher.Hash(password),
-                UsuarioAdmin = isAdmin
+                UsuarioAdmin = isAdmin,
+                Activo = 1
             };
 
             await _db.AddAsync(usuario, ct);
@@ -57,7 +59,7 @@ namespace AfigoBackend.Infraestructure.Services
 
         }
 
-        public async Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin,DateOnly fechaInicio, decimal vacacionesDisponibles, CancellationToken ct)
+        public async Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin,DateOnly fechaInicio, decimal vacacionesDisponibles, int vendedor, string nombreVendedor, CancellationToken ct)
         {
 
             var existe = await _db.Set<Usuario>()
@@ -71,7 +73,8 @@ namespace AfigoBackend.Infraestructure.Services
                 Correo = correo,
                 NombreDeUsuario = nombreUsuario,
                 Contrasenia = _hasher.Hash(password),
-                UsuarioAdmin = isAdmin
+                UsuarioAdmin = isAdmin,
+                Activo=1
             };
 
             var User=await _db.AddAsync(usuario, ct);
@@ -81,7 +84,9 @@ namespace AfigoBackend.Infraestructure.Services
             {
                 IdUsuario = usuario.UserId, 
                 FechaInicio = fechaInicio,
-                VacacionesDisponibles = vacacionesDisponibles
+                VacacionesDisponibles = vacacionesDisponibles,
+                Vendedor = vendedor,
+                NombreVendedor = nombreVendedor
             };
 
             await _db.AddAsync(trabajador, ct);

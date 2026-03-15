@@ -6,14 +6,16 @@ using AfigoBackend.Domain.Inventario;
 using AfigoBackend.Domain.Producto;
 using AfigoBackend.Domain.Proveedor;
 using AfigoBackend.Domain.Sincronizacion;
+using AfigoBackend.Domain.Vendedor;
 using AfigoBackend.Domain.Venta;
 using AfigoBackend.Domain.VentaDetalle;
 using AfigoBackend.Infraestructure.ExternalViews;
+using AfigoBackend.Infraestructure.Util;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Linq;
 using System.Reflection.Metadata;
-using AfigoBackend.Infraestructure.Util;
-using AfigoBackend.Domain.Vendedor;
 
 namespace AfigoBackend.Infraestructure.Services
 {
@@ -30,6 +32,7 @@ namespace AfigoBackend.Infraestructure.Services
 
         public async Task SyncProductosAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var external = await _ext.Productos.AsNoTracking().ToListAsync(ct);
@@ -90,24 +93,7 @@ namespace AfigoBackend.Infraestructure.Services
 
                     if (_app.ChangeTracker.HasChanges())
                         await _app.SaveChangesAsync(ct);
-
-                  
-                    var prodSync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Productos);
-                    if (prodSync.Any())
-                    {
-                        var sync = prodSync.First();
-                        sync.UltimaFecha = DateTime.UtcNow;
-                        _app.Sincronizaciones.Update(sync);
-                    }
-                    else
-                    {
-                        var sync = new Sincronizacion
-                        {
-                            Tipo = Constants.TiposSync.Productos,
-                            UltimaFecha = DateTime.UtcNow
-                        };
-                        _app.Sincronizaciones.Add(sync);
-                    }
+                    
                 }
                 finally
                 {
@@ -116,12 +102,18 @@ namespace AfigoBackend.Infraestructure.Services
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncProductosAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Productos, mensaje, ct);
             }
         }
 
         public async Task SyncGastosAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var cutoff = new DateTime(2025, 1, 1);
@@ -149,31 +141,21 @@ namespace AfigoBackend.Infraestructure.Services
                 if (_app.ChangeTracker.HasChanges())
                     await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Gastos);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Gastos,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncGastosAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Gastos, mensaje, ct);
             }
         }
 
         public async Task SyncInventarioAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var cutoff = new DateTime(2025, 1, 1);
@@ -181,7 +163,7 @@ namespace AfigoBackend.Infraestructure.Services
 
                 foreach (var i in external)
                 {
-                    // Buscar producto por Codigo (id_producto externo)
+
                     var product = await _app.Productos.FirstOrDefaultAsync(p => p.IdentificadorExt == i.IdProducto, ct);
                     if (product == null)
                     {
@@ -208,31 +190,21 @@ namespace AfigoBackend.Infraestructure.Services
                 if (_app.ChangeTracker.HasChanges())
                     await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Inventarios);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Inventarios,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncInventarioAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Inventarios, mensaje, ct);
             }
         }
 
         public async Task SyncProveedoresAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var external = await _ext.Proveedores.AsNoTracking().ToListAsync(ct);
@@ -276,31 +248,21 @@ namespace AfigoBackend.Infraestructure.Services
 
                 await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Proveedores);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Proveedores,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncProveedoresAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Proveedores, mensaje, ct);
             }
         }
 
         public async Task SyncFacturasAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var cutoff = new DateTime(2025, 1, 1);
@@ -349,31 +311,22 @@ namespace AfigoBackend.Infraestructure.Services
 
                 await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Facturas);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Facturas,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
+               
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncFacturasAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Facturas, mensaje, ct);
             }
         }
 
         public async Task SyncVendedoresAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var external = await _ext.Vendedores.AsNoTracking().ToListAsync(ct);
@@ -403,32 +356,22 @@ namespace AfigoBackend.Infraestructure.Services
 
                 await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Proveedores);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Proveedores,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncVendedoresAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Vendedores, mensaje, ct);
             }
         }
 
 
         public async Task SyncVentasAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var cutoff = new DateTime(2025, 1, 1);
@@ -488,31 +431,20 @@ namespace AfigoBackend.Infraestructure.Services
                 if (processedExtIds.Count > 0)
                     await SyncVentaDetallesAsync(processedExtIds, ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Ventas);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Ventas,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex) { 
-
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncVentasAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Ventas, mensaje, ct);
             }
         }
 
         public async Task SyncVentaDetallesAsync(IEnumerable<int>? extVentaIds, CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 if (extVentaIds == null)
@@ -522,10 +454,16 @@ namespace AfigoBackend.Infraestructure.Services
                 if (ventaIdsList.Count == 0)
                     return;
 
-                var externalDetalles = await _ext.VentaDetalles
+                var minId = ventaIdsList.Min();
+                var maxId = ventaIdsList.Max();
+                var ventaIdsSet = new HashSet<int>(ventaIdsList);
+
+                var externalDetalles = (await _ext.VentaDetalles
                     .AsNoTracking()
-                    .Where(d => ventaIdsList.Contains(d.IdVenta))
-                    .ToListAsync(ct);
+                    .Where(d => d.IdVenta >= minId && d.IdVenta <= maxId)
+                    .ToListAsync(ct))
+                    .Where(d => ventaIdsSet.Contains(d.IdVenta))
+                    .ToList();
 
                 if (externalDetalles.Count == 0)
                     return;
@@ -617,12 +555,18 @@ namespace AfigoBackend.Infraestructure.Services
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncVentaDetallesAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.VentaDetalles, mensaje, ct);
             }
         }
 
         public async Task SyncCuentasAsync(CancellationToken ct = default)
         {
+            var mensaje = "Exitoso";
             try
             {
                 var external = await _ext.Cuentas.AsNoTracking().ToListAsync(ct);
@@ -685,26 +629,15 @@ namespace AfigoBackend.Infraestructure.Services
 
                 await _app.SaveChangesAsync(ct);
 
-                var Sync = _app.Sincronizaciones.AsNoTracking().Where(s => s.Tipo == Constants.TiposSync.Cuentas);
-                if (Sync.Any())
-                {
-                    var sync = Sync.First();
-                    sync.UltimaFecha = DateTime.UtcNow;
-                    _app.Sincronizaciones.Update(sync);
-                }
-                else
-                {
-                    var sync = new Sincronizacion
-                    {
-                        Tipo = Constants.TiposSync.Cuentas,
-                        UltimaFecha = DateTime.UtcNow
-                    };
-                    _app.Sincronizaciones.Add(sync);
-                }
             }
             catch (Exception ex)
             {
+                mensaje = $"Error: {ex.Message}";
                 Console.WriteLine($"Error en SyncCuentasAsync: {ex.Message}");
+            }
+            finally
+            {
+                await GuardarSyncAsync(Constants.TiposSync.Cuentas, mensaje, ct);
             }
         }
 
@@ -759,6 +692,31 @@ namespace AfigoBackend.Infraestructure.Services
 
         public Task<List<Sincronizacion>> GetAllSyncEstadosAsync()
           => _app.Sincronizaciones.AsNoTracking().ToListAsync();
+
+
+        private async Task GuardarSyncAsync(string tipo, string mensaje, CancellationToken ct)
+        {
+            var existing = await _app.Sincronizaciones
+                .FirstOrDefaultAsync(s => s.Tipo == tipo, ct);
+
+            if (existing != null)
+            {
+                existing.UltimaFecha = DateTime.UtcNow;
+                existing.Mensaje = mensaje;
+                _app.Sincronizaciones.Update(existing);
+            }
+            else
+            {
+                _app.Sincronizaciones.Add(new Sincronizacion
+                {
+                    Tipo = tipo,
+                    UltimaFecha = DateTime.UtcNow,
+                    Mensaje = mensaje
+                });
+            }
+
+            await _app.SaveChangesAsync(ct);
+        }
+
     }
 }
-//saves por for each? multiples threads o batch y eliminacion de facturas/ventas
