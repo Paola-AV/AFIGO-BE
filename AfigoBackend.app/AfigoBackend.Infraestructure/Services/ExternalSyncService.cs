@@ -331,31 +331,35 @@ namespace AfigoBackend.Infraestructure.Services
             {
                 var external = await _ext.Vendedores.AsNoTracking().ToListAsync(ct);
 
-                foreach (var v in external)
+                // La fuente externa tiene duplicados 
+                var externalDedup = external
+                    .GroupBy(v => (v.IdVendedor, v.IdBodega))
+                    .Select(g => g.First())
+                    .ToList();
+
+                foreach (var v in externalDedup)
                 {
                     ct.ThrowIfCancellationRequested();
 
-                    var existing = await _app.Vendedores.FirstOrDefaultAsync(x => x.IdVendedorExt == v.IdVendedor, ct);
-
+                    var existing = await _app.Vendedores
+                        .FirstOrDefaultAsync(x => x.IdVendedorExt == v.IdVendedor
+                                               && x.IdBodega == v.IdBodega, ct);
                     if (existing == null)
                     {
-                        var nuevo = new Vendedor
+                        _app.Vendedores.Add(new Vendedor
                         {
                             IdBodega = v.IdBodega,
-                            IdVendedorExt=v.IdVendedor,
+                            IdVendedorExt = v.IdVendedor,
                             Nombre = v.Nombre
-                        };
-                        _app.Vendedores.Add(nuevo);
+                        });
                     }
                     else
                     {
-                        existing.IdBodega= v.IdBodega;
                         existing.Nombre = v.Nombre;
                     }
                 }
 
                 await _app.SaveChangesAsync(ct);
-
             }
             catch (Exception ex)
             {
@@ -367,7 +371,6 @@ namespace AfigoBackend.Infraestructure.Services
                 await GuardarSyncAsync(Constants.TiposSync.Vendedores, mensaje, ct);
             }
         }
-
 
         public async Task SyncVentasAsync(CancellationToken ct = default)
         {
@@ -394,6 +397,12 @@ namespace AfigoBackend.Infraestructure.Services
 
                     var extId = v.IdVenta;
 
+                    var desc = v.Descripcion ?? string.Empty;
+                    var idBodega = 0;
+                    if (desc.Contains("PALMARES")) idBodega = 1;
+                    else if (desc.Contains("NICOYA")) idBodega = 2;
+                    else if (desc.Contains("SARCHI")) idBodega = 3; 
+
                     if (!existingByExtId.TryGetValue(extId, out var existing))
                     {
                         var venta = new Venta
@@ -406,7 +415,8 @@ namespace AfigoBackend.Infraestructure.Services
                             numFactura = v.NumFactura ?? string.Empty,
                             Estado = v.Estado ?? string.Empty,
                             MontoTotal = v.MontoTotal,
-                            Referencia = v.Referencia ?? string.Empty
+                            Referencia = v.Referencia ?? string.Empty,
+                            IdBodegaVendedor= idBodega
                         };
 
                         _app.Ventas.Add(venta);
@@ -422,6 +432,7 @@ namespace AfigoBackend.Infraestructure.Services
                         if (v.Estado != null) existing.Estado = v.Estado;
                         existing.MontoTotal = v.MontoTotal;
                         if (v.Referencia != null) existing.Referencia = v.Referencia;
+                        existing.IdBodegaVendedor = idBodega;
                     }
                 }
 

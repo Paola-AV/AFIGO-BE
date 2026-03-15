@@ -8,9 +8,11 @@ namespace AfigoBackend.Api.Controllers
     public class VentaController : ControllerBase
     {
         private readonly IVentaInterface _service;
-        public VentaController(IVentaInterface service)
+        private readonly IExcelExporter _excel;
+        public VentaController(IVentaInterface service, IExcelExporter excel)
         {
             _service = service;
+            _excel = excel;
         }
 
         [HttpGet]
@@ -64,6 +66,19 @@ namespace AfigoBackend.Api.Controllers
                 porcentajeComision = 1.3,
                 comisiones
             });
+        }
+
+        [HttpGet("excel")]
+        public async Task<IActionResult> ExportExcel([FromQuery] DateTime desde,[FromQuery] DateTime hasta)
+        {
+            var filas = await _service.GetVentasParaExcelAsync(desde, hasta);
+            var bytes = _excel.Create(filas, sheetName: "Ventas");
+
+            return File(
+                bytes,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                $"Ventas_{desde:yyyy-MM-dd}_{hasta:yyyy-MM-dd}.xlsx"
+            );
         }
     }
 }

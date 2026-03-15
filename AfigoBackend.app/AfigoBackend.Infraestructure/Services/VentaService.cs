@@ -25,17 +25,12 @@ namespace AfigoBackend.Infraestructure.Services
 
         public async Task<List<VentaGetDto>> GetVentasConDetallesAsync(DateTime desde, DateTime hasta)
         {
+            var vendedorDict = await _db.Vendedores
+                .AsNoTracking()
+                .ToDictionaryAsync(v => (v.IdVendedorExt, v.IdBodega), v => v.Nombre);
 
-            var query =
+            var ventas = await (
                 from v in _db.Ventas.AsNoTracking()
-                join ven in _db.Vendedores.AsNoTracking()
-                     on v.IdVendedor equals ven.IdVendedorExt into gv
-                from ven in gv.DefaultIfEmpty() // left join vendedor
-
-                    // --- OPCIONAL: Left join con Cliente (descomenta si tienes la entidad Cliente) ---
-                    // join cli in _db.Clientes.AsNoTracking()
-                    //      on v.IdCliente equals cli.IdCliente into gc
-                    // from cli in gc.DefaultIfEmpty() // left join cliente
                 where v.Fecha >= desde && v.Fecha <= hasta
                 orderby v.Fecha descending
                 select new VentaGetDto
@@ -43,37 +38,60 @@ namespace AfigoBackend.Infraestructure.Services
                     IdVenta = v.IdVenta,
                     Fecha = v.Fecha,
                     Descripcion = v.Descripcion,
-                    NombreVendor = ven != null ? ven.Nombre : null,
-                    NombreCliente = null, 
+                    NombreVendor = null, 
+                    NombreCliente = null,
                     numFactura = v.numFactura,
                     Estado = v.Estado,
                     MontoTotal = v.MontoTotal,
                     Referencia = v.Referencia,
                     IdentificadorExt = v.IdentificadorExt,
+                    IdVendedor = v.IdVendedor,      
+                    IdBodegaVendedor = v.IdBodegaVendedor, 
+                }
+            ).ToListAsync();
 
-                    VentaDetalles = _db.VentaDetalles
-                        .AsNoTracking()
-                        .Where(d => d.IdVenta == v.IdVenta)
-                        .Join(
-                            _db.Productos.AsNoTracking(),
-                            d => d.IdProducto,
-                            p => p.IdProducto,
-                            (d, p) => new { d, p }
-                        )
-                        .Select(x => new VentaDetalleGetDto
-                        {
-                            IdVentaDetalle = x.d.IdVentaDetalle,
-                            IdVenta = x.d.IdVenta,
-                            NombreProducto = x.p.Nombre, 
-                            FamiliaProducto = x.p.Familia,
-                            Cantidad = x.d.Cantidad ?? 0
-                        })
-                        .ToList()
-                };
+            if (ventas.Count == 0) return ventas;
 
-            return await query.ToListAsync();
+            foreach (var venta in ventas)
+            {
+                if (venta.IdVendedor.HasValue)
+                {
+                    vendedorDict.TryGetValue(
+                        (venta.IdVendedor.Value, venta.IdBodegaVendedor),
+                        out var nombre
+                    );
+                    venta.NombreVendor = nombre;
+                }
+            }
+
+            var ids = ventas.Select(v => v.IdVenta).ToList();
+
+            var detalles = await (
+                from d in _db.VentaDetalles.AsNoTracking()
+                join p in _db.Productos.AsNoTracking()
+                     on d.IdProducto equals p.IdProducto
+                where ids.Contains(d.IdVenta)
+                select new VentaDetalleGetDto
+                {
+                    IdVentaDetalle = d.IdVentaDetalle,
+                    IdVenta = d.IdVenta,
+                    NombreProducto = p.Nombre,
+                    FamiliaProducto = p.Familia,
+                    Cantidad = d.Cantidad ?? 0
+                }
+            ).ToListAsync();
+
+            var detallesPorVenta = detalles
+                .GroupBy(d => d.IdVenta)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            foreach (var venta in ventas)
+                venta.VentaDetalles = detallesPorVenta.TryGetValue(venta.IdVenta, out var det)
+                    ? det
+                    : new List<VentaDetalleGetDto>();
+
+            return ventas;
         }
-
         public async Task<List<VentaGetDto>> GetVentasConDetallesPorVendedorAsync(DateTime desde, DateTime hasta, string nombreVendedor)
         {
             var query =
@@ -204,6 +222,55 @@ namespace AfigoBackend.Infraestructure.Services
                                     .ToList()
                 })
                 .ToListAsync();
+        }
+
+        public async Task<List<VentasDetallesExcelDto>> GetVentasParaExcelAsync(DateTime desde, DateTime hasta)
+        {
+            var ventas = await GetVentasConDetallesAsync(desde, hasta);
+            var filas = new List<VentasDetallesExcelDto>();
+
+            foreach (var venta in ventas)
+            {
+                var detalles = venta.VentaDetalles ?? new List<VentaDetalleGetDto>();
+
+                if (detalles.Count == 0)
+                {
+                    // Venta sin detalles — una sola fila con detalles vacíos
+                    filas.Add(MapearFila(venta, null));
+                }
+                else
+                {
+                    // Primera fila lleva los datos de la venta
+                    filas.Add(MapearFila(venta, detalles[0], esPrimera: true));
+
+                    // Filas subsiguientes — datos de venta en blanco
+                    for (int i = 1; i < detalles.Count; i++)
+                        filas.Add(MapearFila(null, detalles[i], esPrimera: false));
+                }
+            }
+
+            return filas;
+        }
+
+        private static VentasDetallesExcelDto MapearFila(VentaGetDto? venta, VentaDetalleGetDto? detalle, bool esPrimera = true)
+        {
+            return new VentasDetallesExcelDto
+            {
+                // Datos de la venta solo en la primera fila del grupo
+                NumFactura = esPrimera ? venta?.numFactura : null,
+                Fecha = esPrimera ? venta?.Fecha : null,
+                Descripcion = esPrimera ? venta?.Descripcion : null,
+                Estado = esPrimera ? venta?.Estado : null,
+                NombreVendedor = esPrimera ? venta?.NombreVendor : null,
+                NombreCliente = esPrimera ? venta?.NombreCliente : null,
+                Referencia = esPrimera ? venta?.Referencia : null,
+                MontoTotal = esPrimera ? venta?.MontoTotal : null,
+
+                // Detalle siempre visible
+                NombreProducto = detalle?.NombreProducto,
+                FamiliaProducto = detalle?.FamiliaProducto,
+                Cantidad = detalle?.Cantidad,
+            };
         }
     }
 }

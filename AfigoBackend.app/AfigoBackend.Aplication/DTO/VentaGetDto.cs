@@ -30,6 +30,9 @@ namespace AfigoBackend.Aplication.DTO
         public int IdentificadorExt { get; set; }
 
         public List<VentaDetalleGetDto> VentaDetalles { get; set; } = new List<VentaDetalleGetDto>();
+
+        public int? IdVendedor { get; set; }
+        public int IdBodegaVendedor { get; set; }
     }
 
     public class VentaDetalleGetDto

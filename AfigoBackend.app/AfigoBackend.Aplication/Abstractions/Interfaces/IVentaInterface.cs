@@ -16,5 +16,6 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
         Task<double> GetComisionMensualPorVendedorAsync(string nombreVendedor);
         Task<List<VentaGetDto>> GetVentasConDetallesAsync( DateTime desde, DateTime hasta);
         Task<List<VentaGetDto>> GetVentasConDetallesPorVendedorAsync(DateTime desde, DateTime hasta, string nombreVendedor);
+        Task<List<VentasDetallesExcelDto>> GetVentasParaExcelAsync(DateTime desde, DateTime hasta);
     }
 }
