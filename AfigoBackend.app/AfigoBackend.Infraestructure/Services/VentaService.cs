@@ -39,7 +39,7 @@ namespace AfigoBackend.Infraestructure.Services
                     Fecha = v.Fecha,
                     Descripcion = v.Descripcion,
                     NombreVendor = null, 
-                    NombreCliente = null,
+                    NombreCliente = v.NombreCliente,
                     numFactura = v.numFactura,
                     Estado = v.Estado,
                     MontoTotal = v.MontoTotal,
@@ -108,7 +108,7 @@ namespace AfigoBackend.Infraestructure.Services
                     Fecha = v.Fecha,
                     Descripcion = v.Descripcion,
                     NombreVendor = ven.Nombre,
-                    NombreCliente = null,
+                    NombreCliente = v.NombreCliente,
                     numFactura = v.numFactura,
                     Estado = v.Estado,
                     MontoTotal = v.MontoTotal,
@@ -210,6 +210,7 @@ namespace AfigoBackend.Infraestructure.Services
                     Estado = v.Estado,
                     MontoTotal = v.MontoTotal,
                     Referencia = v.Referencia,
+                    NombreCliente = v.NombreCliente,
                     VentaDetalles = _db.VentaDetalles
                                     .Where(d => d.IdVenta == v.IdVenta)
                                     .Select(d => new VentaDetalle

@@ -44,5 +44,8 @@ namespace AfigoBackend.Domain.Venta
 
         [Column("id_bodega_vendedor")]
         public int IdBodegaVendedor { get; set; }
+
+        [Column("nombre_cliente")]
+        public string? NombreCliente { get;set; } 
     }
 }

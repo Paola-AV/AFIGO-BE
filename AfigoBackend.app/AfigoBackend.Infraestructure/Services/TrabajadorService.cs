@@ -62,8 +62,16 @@ namespace AfigoBackend.Infraestructure.Services
            
         
 
-        public Task<Trabajador?> GetByUsuarioIdAsync(int idUsuario)
-            => _db.Trabajadores.FirstOrDefaultAsync(t => t.IdUsuario == idUsuario);
+        public async Task<Trabajador?> GetByUsuarioIdAsync(int idUsuario)
+        {
+            Trabajador trabajador = await _db.Trabajadores.FirstOrDefaultAsync(t => t.IdUsuario == idUsuario);
+            if (trabajador == null) { return null; }
+            var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trabajador.IdTrabajador);
+            int disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
+            trabajador.VacacionesDisponibles = disponible;
+            return trabajador;
+        }
+          
 
         public async Task<Trabajador> CreateAsync(Trabajador trabajador) { 
             _db.Trabajadores.Add(trabajador);

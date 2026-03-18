@@ -416,7 +416,8 @@ namespace AfigoBackend.Infraestructure.Services
                             Estado = v.Estado ?? string.Empty,
                             MontoTotal = v.MontoTotal,
                             Referencia = v.Referencia ?? string.Empty,
-                            IdBodegaVendedor= idBodega
+                            IdBodegaVendedor= idBodega,
+                            NombreCliente = v.NombreCliente
                         };
 
                         _app.Ventas.Add(venta);
@@ -433,6 +434,7 @@ namespace AfigoBackend.Infraestructure.Services
                         existing.MontoTotal = v.MontoTotal;
                         if (v.Referencia != null) existing.Referencia = v.Referencia;
                         existing.IdBodegaVendedor = idBodega;
+                        if (v.NombreCliente != null) existing.NombreCliente = v.NombreCliente;
                     }
                 }
 

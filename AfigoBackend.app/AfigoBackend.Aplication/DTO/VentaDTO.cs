@@ -26,6 +26,8 @@ namespace AfigoBackend.Aplication.DTO
 
         public string? Referencia { get; set; } 
 
+        public string? NombreCliente { get; set; }
+
         public List<VentaDetalle> VentaDetalles { get; set; } = new();
     }
 }

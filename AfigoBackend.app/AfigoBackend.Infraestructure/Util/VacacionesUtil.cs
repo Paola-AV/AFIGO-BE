@@ -42,7 +42,7 @@ namespace AfigoBackend.Infraestructure.Util
 
             // 3) Días disponibles
             int disponibles = totalMeses - diasTomados;
-            return disponibles < 0 ? 0 : disponibles;
+            return disponibles;
         }
 
         // Cuenta días de forma inclusiva entre dos DateOnly (p. ej. 10–12 => 3 días)

@@ -29,16 +29,20 @@ namespace AfigoBackend.Infraestructure.Services
                 .Where(p => p.IdUsuario == idUsuario)
                 .ToListAsync();
 
+
         public Task<List<Pedido>> GetAllByTipoPedido()
-           => _db.Pedidos
+            => _db.Pedidos
                 .AsNoTracking()
                 .Where(p => p.TipoPedido == Constants.TiposDocumento.Pedido)
+                .OrderByDescending(p => p.FechaPedido)
                 .ToListAsync();
+
 
         public Task<List<Pedido>> GetAllByTipoCotizacion()
           => _db.Pedidos
                .AsNoTracking()
                .Where(p => p.TipoPedido == Constants.TiposDocumento.Cotizacion)
+               .OrderByDescending(p => p.FechaPedido)
                .ToListAsync();
 
         public async Task<bool> UpdateAsync(Pedido pedido)
@@ -92,7 +96,7 @@ namespace AfigoBackend.Infraestructure.Services
                     on p.IdUsuario equals u.UserId into gj // group join
                 from u in gj.DefaultIfEmpty() // left join
                 where p.TipoPedido == Constants.TiposDocumento.Pedido
-                orderby p.FechaPedido
+                orderby p.FechaPedido descending
                 select new PedidoConDetalleDto
                 {
                     IdPedido = p.IdPedido,
@@ -132,7 +136,7 @@ namespace AfigoBackend.Infraestructure.Services
                     on p.IdUsuario equals u.UserId into gj // group join
                 from u in gj.DefaultIfEmpty() // left join
                 where p.TipoPedido == Constants.TiposDocumento.Cotizacion
-                orderby p.FechaPedido
+                orderby p.FechaPedido descending
                 select new PedidoConDetalleDto
                 {
                     IdPedido = p.IdPedido,

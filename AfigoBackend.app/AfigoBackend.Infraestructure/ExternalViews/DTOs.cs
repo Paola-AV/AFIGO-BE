@@ -150,6 +150,9 @@ namespace AfigoBackend.Infraestructure.ExternalViews
 
         [Column("referencia")]
         public string? Referencia { get; set; }
+
+        [Column("nombre_cliente")]
+        public string? NombreCliente { get; set; }
     }
 
     [Keyless]

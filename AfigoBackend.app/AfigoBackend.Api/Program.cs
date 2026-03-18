@@ -4,7 +4,7 @@ using AfigoBackend.Infraestructure.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args); //TODO: habilitar https
+var builder = WebApplication.CreateBuilder(args); 
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -40,23 +40,13 @@ builder.Services
     {
         options.Cookie.Name = "afigo_auth";
         options.Cookie.HttpOnly = true;
-        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
 
-        // ⬇️ PRODUCCIÓN si FRONTEND y API están en dominios distintos (subdominios o dominios distintos):
-        // options.Cookie.SameSite = SameSiteMode.None; // requiere HTTPS
-
-        // ⬇️ DESARROLLO o MISMO ORIGEN:
         options.Cookie.SameSite = SameSiteMode.Lax;
 
-        // Para peticiones cross-site desde otro dominio (FRONT != API) requiere HTTPS:
-        options.Cookie.SameSite = SameSiteMode.None; 
-
-
-        // Inactividad: 20 minutos + sliding
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
         options.SlidingExpiration = true;
 
-        // API: evita redirecciones y devuelve 401/403
         options.Events = new CookieAuthenticationEvents
         {
             OnRedirectToLogin = ctx =>
@@ -75,16 +65,16 @@ builder.Services
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
-// CORS (agrega tus dominios reales de prod)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-             "http://localhost:3000",
+            "http://localhost:3000",
             "http://localhost:5173",
-            "http://localhost:5160", 
+            "http://localhost:5160",
             "https://localhost:7122",
+            "http://18.217.167.146",  
             "https://app.tudominio.com",
             "https://tudominio.com"
         )
@@ -100,25 +90,24 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(); // /swagger
+    app.UseSwaggerUI(); 
 }
 
-// CORS primero (para preflights y headers)
 app.UseCors("AllowFrontend");
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 // ====== Middleware CSRF ======
-// Define aquí los orígenes permitidos (mismos que en CORS)
 var allowedOrigins = new[]
 {
      "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost:5160",    
     "https://localhost:7122",
+    "http://18.217.167.146",
     "https://app.tudominio.com",
     "https://tudominio.com"
 };
@@ -127,7 +116,6 @@ app.Use(async (ctx, next) =>
 {
     var path = ctx.Request.Path.Value ?? string.Empty;
 
-    // Omitir swagger y endpoints de diagnóstico/health si usas alguno
     if (path.StartsWith("/swagger", StringComparison.OrdinalIgnoreCase) ||
         path.StartsWith("/health", StringComparison.OrdinalIgnoreCase))
     {
@@ -135,7 +123,6 @@ app.Use(async (ctx, next) =>
         return;
     }
 
-    // Permitir sin validación CSRF métodos "seguros" y preflight
     if (HttpMethods.IsGet(ctx.Request.Method) ||
         HttpMethods.IsHead(ctx.Request.Method) ||
         HttpMethods.IsOptions(ctx.Request.Method))
@@ -144,7 +131,6 @@ app.Use(async (ctx, next) =>
         return;
     }
 
-    // Validar solo métodos que modifican estado
     if (HttpMethods.IsPost(ctx.Request.Method) ||
         HttpMethods.IsPut(ctx.Request.Method) ||
         HttpMethods.IsPatch(ctx.Request.Method) ||
@@ -167,7 +153,6 @@ app.Use(async (ctx, next) =>
             return;
         }
 
-        // Exigir header AJAX para evitar submits ciegos
         if (!sameOrigin&&!ctx.Request.Headers.ContainsKey("X-Requested-With"))
         {
             ctx.Response.StatusCode = StatusCodes.Status400BadRequest;
