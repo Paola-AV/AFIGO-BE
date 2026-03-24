@@ -18,6 +18,20 @@ namespace AfigoBackend.Infraestructure.Services
         public Task<List<PeticionVacaciones>> GetAllAsync()
           => _db.PeticionesVacaciones.AsNoTracking().ToListAsync();
 
+        public Task <List<PeticionVacaciones>> GetAllOnFuture()
+        {
+            var hoy = DateOnly.FromDateTime(DateTime.Today);
+            var peticiones= _db.PeticionesVacaciones.AsNoTracking().Where(p => p.FechaInicio > hoy).ToListAsync();
+            return peticiones;
+        }
+
+        public Task<List<PeticionVacaciones>> GetAllOnPast()
+        {
+            var hoy = DateOnly.FromDateTime(DateTime.Today);
+            var peticiones = _db.PeticionesVacaciones.AsNoTracking().Where(p => p.FechaInicio <= hoy).ToListAsync();
+            return peticiones;
+        }
+
         public Task<PeticionVacaciones?> GetByIdAsync(int id)
           => _db.PeticionesVacaciones.FindAsync(id).AsTask();
 

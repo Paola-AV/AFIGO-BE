@@ -20,6 +20,12 @@ namespace AfigoBackend.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
+        [HttpGet("futuro")]
+        public async Task<IActionResult> GetAllFuture() => Ok(await _service.GetAllOnFuture());
+
+        [HttpGet("pasado")]
+        public async Task<IActionResult> GetAllPast() => Ok(await _service.GetAllOnPast());
+
         [HttpGet("trabajador/{id:int}")]
         public async Task<IActionResult> GetByTrabajadorId(int id)
         {

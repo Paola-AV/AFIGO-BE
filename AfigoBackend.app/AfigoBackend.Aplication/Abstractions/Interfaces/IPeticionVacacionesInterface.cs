@@ -12,6 +12,8 @@ namespace AfigoBackend.Aplication.Abstractions.Interfaces
         Task<PeticionVacaciones> CreateAsync(PeticionVacaciones peticion);
         Task<bool> DeleteAsync(int id);
         Task<List<PeticionVacaciones>> GetAllAsync();
+        Task<List<PeticionVacaciones>> GetAllOnFuture();
+        Task<List<PeticionVacaciones>> GetAllOnPast();
         Task<PeticionVacaciones?> GetByIdAsync(int id);
         Task<List<PeticionVacaciones>> GetByIdTrabajador(int idTrabajador);
         Task<bool> UpdateAsync(PeticionVacaciones peticion);

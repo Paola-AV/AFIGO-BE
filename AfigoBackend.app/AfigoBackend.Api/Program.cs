@@ -40,9 +40,9 @@ builder.Services
     {
         options.Cookie.Name = "afigo_auth";
         options.Cookie.HttpOnly = true;
-        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 
-        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SameSite = SameSiteMode.None;
 
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
         options.SlidingExpiration = true;
@@ -74,9 +74,9 @@ builder.Services.AddCors(options =>
             "http://localhost:5173",
             "http://localhost:5160",
             "https://localhost:7122",
-            "http://18.217.167.146",  
-            "https://app.tudominio.com",
-            "https://tudominio.com"
+            "http://18.217.167.146",
+            "https://www.vizodatasolution.com",
+            "https://vizodatasolution.com"
         )
         .AllowAnyHeader()
         .AllowAnyMethod()
@@ -90,6 +90,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor |
+                       Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto
+});
+
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
@@ -98,7 +104,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 
 app.UseCors("AllowFrontend");
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 // ====== Middleware CSRF ======
 var allowedOrigins = new[]
@@ -107,9 +113,8 @@ var allowedOrigins = new[]
     "http://localhost:5173",
     "http://localhost:5160",    
     "https://localhost:7122",
-    "http://18.217.167.146",
-    "https://app.tudominio.com",
-    "https://tudominio.com"
+    "https://www.vizodatasolution.com",
+    "https://vizodatasolution.com"
 };
 
 app.Use(async (ctx, next) =>
