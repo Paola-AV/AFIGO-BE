@@ -46,5 +46,7 @@ namespace AfigoBackend.Domain.Pedido
         [Column("tipo_pedido")]
         public string TipoPedido { get; set; } = string.Empty;
 
+        [Column("sucursal")]
+        public string? Sucursal { get; set; }
     }
 }

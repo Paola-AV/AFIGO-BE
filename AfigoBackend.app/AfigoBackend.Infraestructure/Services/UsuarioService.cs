@@ -39,7 +39,8 @@ namespace AfigoBackend.Infraestructure.Services
                         FechaInicio = t.FechaInicio,
                         VacacionesDisponibles = t.VacacionesDisponibles,
                         Vendedor = t.Vendedor,
-                        NombreVendedor = t.NombreVendedor
+                        NombreVendedor = t.NombreVendedor,
+                        Sede=t.Sede
                     })
                     .FirstOrDefault()
             })
@@ -54,7 +55,7 @@ namespace AfigoBackend.Infraestructure.Services
             await _db.SaveChangesAsync();
             return usuario;
         }
-        public async Task<bool> UpdateAsync(int userId, int? trabajadorId, string correo, string nombreUsuario, string nombre, string? nombreVendedor, int isAdmin, int vendedor)
+        public async Task<bool> UpdateAsync(int userId, int? trabajadorId, string correo, string nombreUsuario, string nombre, string? nombreVendedor, int isAdmin, int vendedor, string sede)
         {
             var entity = await _db.Usuarios.FindAsync(userId);
             if (entity is null) return false;
@@ -71,6 +72,7 @@ namespace AfigoBackend.Infraestructure.Services
                 {
                     trabajador.NombreVendedor = nombreVendedor;
                     trabajador.Vendedor = vendedor;
+                    trabajador.Sede = sede;
                 }
             }
 

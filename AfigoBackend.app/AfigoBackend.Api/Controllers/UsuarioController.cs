@@ -51,7 +51,8 @@ namespace AfigoBackend.Api.Controllers
                 usuario.Nombre,
                 usuario.NombreVendedor,
                 usuario.UsuarioAdmin ? 1 : 0,
-                vendedor ? 1 : 0
+                vendedor ? 1 : 0,
+                usuario.Sede ?? string.Empty
                 );
             return ok ? NoContent() : NotFound();
         }
@@ -79,5 +80,6 @@ public record UsuarioTrabajadorUpdate(
     string NombreDeUsuario,
     string? NombreVendedor,
     bool UsuarioAdmin,
-    bool? Vendedor
+    bool? Vendedor,
+    string? Sede
 );

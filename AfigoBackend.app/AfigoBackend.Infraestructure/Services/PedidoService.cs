@@ -45,7 +45,7 @@ namespace AfigoBackend.Infraestructure.Services
                .OrderByDescending(p => p.FechaPedido)
                .ToListAsync();
 
-        public async Task<bool> UpdateAsync(Pedido pedido)
+        public async Task<bool> UpdateAsync(Pedido pedido) //esto debe cambiar a [patch
         {
             if (pedido is null || pedido.IdPedido <= 0) { return false; }
 
@@ -54,17 +54,17 @@ namespace AfigoBackend.Infraestructure.Services
 
             if (entity is null) { return false; }
 
-            entity.IdUsuario = pedido.IdUsuario;
-            entity.FechaPedido = pedido.FechaPedido;
+            entity.IdUsuario = entity.IdUsuario;
+            entity.FechaPedido = entity.FechaPedido;
             entity.Estado = pedido.Estado;
-            entity.IdUsuario = pedido.IdUsuario;
-            entity.NombreCliente = pedido.NombreCliente;
-            entity.FacturaElectronica = pedido.FacturaElectronica;
-            entity.DetalleFactura = pedido.DetalleFactura;
-            entity.MetodoEnvio = pedido.MetodoEnvio;
-            entity.DireccionEnvio = pedido.DireccionEnvio;
-            entity.UrgenciaEnvio = pedido.UrgenciaEnvio;
-            entity.TipoPedido = pedido.TipoPedido;
+            entity.IdUsuario = entity.IdUsuario;
+            entity.NombreCliente = entity.NombreCliente;
+            entity.FacturaElectronica = entity.FacturaElectronica;
+            entity.DetalleFactura = entity.DetalleFactura;
+            entity.MetodoEnvio = entity.MetodoEnvio;
+            entity.DireccionEnvio = entity.DireccionEnvio;
+            entity.UrgenciaEnvio = entity.UrgenciaEnvio;
+            entity.TipoPedido = entity.TipoPedido;
 
             await _db.SaveChangesAsync();
             return true;
@@ -110,6 +110,7 @@ namespace AfigoBackend.Infraestructure.Services
                     DireccionEnvio = p.DireccionEnvio,
                     UrgenciaEnvio = p.UrgenciaEnvio,
                     TipoPedido = p.TipoPedido,
+                    Sucursal = p.Sucursal,
                     Detalles = _db.DetallePedidos
                         .AsNoTracking()
                         .Where(d => d.PedidoId == p.IdPedido)
@@ -150,6 +151,7 @@ namespace AfigoBackend.Infraestructure.Services
                     DireccionEnvio = p.DireccionEnvio,
                     UrgenciaEnvio = p.UrgenciaEnvio,
                     TipoPedido = p.TipoPedido,
+                    Sucursal = p.Sucursal,
                     Detalles = _db.DetallePedidos
                         .AsNoTracking()
                         .Where(d => d.PedidoId == p.IdPedido)

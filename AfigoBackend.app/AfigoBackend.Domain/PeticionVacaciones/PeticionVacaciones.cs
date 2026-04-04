@@ -29,5 +29,8 @@ namespace AfigoBackend.Domain.PeticionVacaciones
 
         [Column("fechaCreado")]
         public DateTime? FechaCreado { get; set; }
+
+        [Column("medio_dia")]
+        public bool MedioDia { get; set; }
     }
 }

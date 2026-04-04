@@ -44,6 +44,7 @@ public class AuthController : ControllerBase
                 dto.VacacionesDisponibles,
                 dto.Vendedor.HasValue && dto.Vendedor.Value ? 1 : 0,
                 dto.NombreVendedor?.Trim() ?? string.Empty,
+                dto.Sede ?? string.Empty,
                 ct);
 
             return Ok(new { message = "Usuario registrado" });
@@ -93,7 +94,8 @@ public class AuthController : ControllerBase
         var trabajador = await _trabajadorService.GetByUsuarioIdAsync(user.UserId);
         var esVendedor = trabajador?.Vendedor ?? 0;
         var nombreVendedor = trabajador?.NombreVendedor ?? "";
-        var resp = new UserLoginDto(user.UserId, user.Nombre ?? string.Empty, user.UsuarioAdmin, esVendedor, nombreVendedor);
+        var sede = trabajador?.Sede;
+        var resp = new UserLoginDto(user.UserId, user.Nombre ?? string.Empty, user.UsuarioAdmin, esVendedor, nombreVendedor, sede);
         return Ok(resp);
     }
 
@@ -139,8 +141,42 @@ public class AuthController : ControllerBase
         }
     }
 
+    [HttpPost("change-password/force")]
+    [AllowAnonymous]
+    public async Task<IActionResult> ChangePasswordForced([FromBody] ChangePasswordForcedRequest dto, CancellationToken ct)
+    {
+        
+        try
+        {
+            await _service.ChangePasswordAsyncForce(dto.UserId,dto.NewPassword, ct);
+
+            return Ok(new { message = "Contraseña actualizada correctamente." });
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new { error = ex.Message });
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(new { error = ex.Message });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { error = ex.Message });
+        }
+    }
+
 }
 
+public class ChangePasswordForcedRequest
+{
+    public int UserId { get; set; }
+    public string NewPassword { get; set; }
+}
 
 
 public record RegisterDto(
@@ -152,7 +188,8 @@ public record RegisterDto(
     DateOnly FechaInicio,
     decimal VacacionesDisponibles,
     bool? Vendedor,
-    string? NombreVendedor
+    string? NombreVendedor,
+    string? Sede
 );
 
 public record LoginDto(string CorreoOUsuario, string Password);
@@ -162,7 +199,8 @@ public record UserLoginDto(
             string Nombre,
             int UsuarioAdmin,
             int? Vendedor, 
-            string NombreVendedor
+            string NombreVendedor,
+            string Sede
         );
 
 public record ChangePasswordDto(int UserId,string CurrentPassword, string NewPassword);

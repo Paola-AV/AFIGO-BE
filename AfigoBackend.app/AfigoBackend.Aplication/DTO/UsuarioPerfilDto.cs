@@ -39,5 +39,7 @@ namespace AfigoBackend.Aplication.DTO
         public int? Vendedor { get; set; }
 
         public string? NombreVendedor { get; set; }
+
+        public string? Sede { get; set; }
     }
 }

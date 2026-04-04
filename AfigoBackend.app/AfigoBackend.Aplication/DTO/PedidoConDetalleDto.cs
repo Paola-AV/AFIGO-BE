@@ -32,6 +32,8 @@ namespace AfigoBackend.Aplication.DTO
 
         public string TipoPedido { get; set; } = string.Empty;
 
+        public string? Sucursal {  get; set; } = string.Empty;
+
         public List<DetallePedidoDto> Detalles { get; set; } = new List<DetallePedidoDto>();
     }
 

@@ -41,7 +41,7 @@ namespace AfigoBackend.Infraestructure.Services
                 {
 
                     var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trab.IdTrabajador);
-                    int disponibles = VacacionesUtil.CalcularDiasVacacionesDisponibles(trab, peticiones);
+                    decimal disponibles = VacacionesUtil.CalcularDiasVacacionesDisponibles(trab, peticiones);
 
                     trab.VacacionesDisponibles = disponibles;
                 }
@@ -54,7 +54,7 @@ namespace AfigoBackend.Infraestructure.Services
             Trabajador trabajador = await _db.Trabajadores.FindAsync(id).AsTask();
             if(trabajador == null) { return null; }
             var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trabajador.IdTrabajador);
-            int disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
+            decimal disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
             trabajador.VacacionesDisponibles = disponible;
             return trabajador;
 
@@ -67,7 +67,7 @@ namespace AfigoBackend.Infraestructure.Services
             Trabajador trabajador = await _db.Trabajadores.FirstOrDefaultAsync(t => t.IdUsuario == idUsuario);
             if (trabajador == null) { return null; }
             var peticiones = await _peticionVacacionesService.GetByIdTrabajador(trabajador.IdTrabajador);
-            int disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
+            decimal disponible = VacacionesUtil.CalcularDiasVacacionesDisponibles(trabajador, peticiones);
             trabajador.VacacionesDisponibles = disponible;
             return trabajador;
         }

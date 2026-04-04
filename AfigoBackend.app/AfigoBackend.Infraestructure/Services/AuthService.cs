@@ -59,7 +59,7 @@ namespace AfigoBackend.Infraestructure.Services
 
         }
 
-        public async Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin,DateOnly fechaInicio, decimal vacacionesDisponibles, int vendedor, string nombreVendedor, CancellationToken ct)
+        public async Task RegistrarUsuarioTrabajadorAsync(string correo, string nombre, string password, string nombreUsuario, int isAdmin,DateOnly fechaInicio, decimal vacacionesDisponibles, int vendedor, string nombreVendedor, string sede, CancellationToken ct)
         {
 
             var existe = await _db.Set<Usuario>()
@@ -86,7 +86,8 @@ namespace AfigoBackend.Infraestructure.Services
                 FechaInicio = fechaInicio,
                 VacacionesDisponibles = vacacionesDisponibles,
                 Vendedor = vendedor,
-                NombreVendedor = nombreVendedor
+                NombreVendedor = nombreVendedor,
+                Sede =sede
             };
 
             await _db.AddAsync(trabajador, ct);
@@ -111,6 +112,21 @@ namespace AfigoBackend.Infraestructure.Services
             if (sameAsCurrent)
                 throw new InvalidOperationException("La nueva contraseña no puede ser igual a la actual.");
 
+            ValidatePassword(newPassword);
+
+            user.Contrasenia = _hasher.Hash(newPassword);
+            await _db.SaveChangesAsync(ct);
+        }
+
+        public async Task ChangePasswordAsyncForce(int userId, string newPassword, CancellationToken ct)
+        {
+            var user = await _db.Set<Usuario>()
+                                .FirstOrDefaultAsync(u => u.UserId == userId, ct);
+
+            if (user is null)
+                throw new KeyNotFoundException("Usuario no encontrado.");
+
+            
             ValidatePassword(newPassword);
 
             user.Contrasenia = _hasher.Hash(newPassword);

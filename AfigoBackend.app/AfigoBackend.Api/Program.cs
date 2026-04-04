@@ -121,8 +121,11 @@ app.Use(async (ctx, next) =>
 {
     var path = ctx.Request.Path.Value ?? string.Empty;
 
+
     if (path.StartsWith("/swagger", StringComparison.OrdinalIgnoreCase) ||
-        path.StartsWith("/health", StringComparison.OrdinalIgnoreCase))
+            path.EndsWith("swagger.json", StringComparison.OrdinalIgnoreCase) ||
+            path.StartsWith("/health", StringComparison.OrdinalIgnoreCase))
+
     {
         await next();
         return;

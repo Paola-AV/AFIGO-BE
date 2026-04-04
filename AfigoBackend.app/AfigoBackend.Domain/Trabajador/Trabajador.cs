@@ -29,5 +29,8 @@ namespace AfigoBackend.Domain.Trabajador
 
         [Column("nombre_vendedor")]
         public string? NombreVendedor { get; set; }
+
+        [Column("sede")]
+        public string? Sede { get; set; }
     }
 }

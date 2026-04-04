@@ -158,7 +158,7 @@ namespace AfigoBackend.Infraestructure.Services
             var mensaje = "Exitoso";
             try
             {
-                var cutoff = new DateTime(2025, 1, 1);
+                var cutoff = new DateTime(2020, 1, 1);
                 var external = await _ext.Inventarios.AsNoTracking().Where(i => i.FechaIngreso >= cutoff).ToListAsync(ct);
 
                 foreach (var i in external)
@@ -265,7 +265,7 @@ namespace AfigoBackend.Infraestructure.Services
             var mensaje = "Exitoso";
             try
             {
-                var cutoff = new DateTime(2025, 1, 1);
+                var cutoff = new DateTime(2020, 1, 1);
                 var external = await _ext.Facturas.AsNoTracking().Where(i => i.Fecha >= cutoff).ToListAsync(ct);
 
                 foreach (var f in external)
@@ -377,7 +377,7 @@ namespace AfigoBackend.Infraestructure.Services
             var mensaje = "Exitoso";
             try
             {
-                var cutoff = new DateTime(2025, 1, 1);
+                var cutoff = new DateTime(2024, 1, 1);
 
                 var external = await _ext.Ventas.AsNoTracking().Where(i => i.Fecha >= cutoff).ToListAsync(ct);
 
