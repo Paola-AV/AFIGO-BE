@@ -30,7 +30,7 @@ namespace AfigoBackend.Infraestructure.Util
 
             var diasTomados = new Dictionary<DateOnly, decimal>();
 
-            foreach (var v in vacaciones.Where(v => v.Estado == "APROBADO"))
+            foreach (var v in vacaciones.Where(v => v.Estado == "APROBADA"|| v.Estado == "APROBADO"))
             {
                 if (v.MedioDia)
                 {
